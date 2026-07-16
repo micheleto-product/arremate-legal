@@ -1,0 +1,766 @@
+/* Estilos globais para facilitar a customização */
+:root {
+    --cor-primaria: #FF6D00; /* Azul padrão - Troque pela sua cor principal */
+    --cor-secundaria: #30AFBF; /* Cinza padrão - Troque pela sua cor secundária */
+    --cor-texto-principal: #FF6D00; /* Preto padrão - Troque pela cor do texto principal */
+    --cor-texto-secundario: #ffffff; /* Cinza claro padrão - Troque pela cor do texto secundário */
+    --cor-fundo: #f8f9fa; /* Branco acinzentado padrão - Troque pela cor de fundo */
+    --cor-fundo-secao: #000000; /* Branco padrão para seções - Troque se necessário */
+    --fonte-principal: sans-serif; /* Fonte padrão - Troque pela sua fonte */
+}
+
+
+/* ----------------- Head ------------------------- */
+header {
+  background-color: #FF6D00;
+  color: #fff;
+  padding: 15px 0;
+  position: fixed;
+  z-index: 9999; /* Garante que a barra fique acima de outros elementos */
+  top: 0; /* Posiciona o topo do header na parte superior da tela */
+  left: 0; /* Posiciona o lado esquerdo do header na borda esquerda da tela */
+  width: 100%; /* Faz o header ocupar 100% da largura da tela */
+}
+
+.menu{
+  margin: 0;
+  font-family: Arial, sans-serif;
+  max-width: 80%; /* Permite que o conteúdo ocupe no máximo 80% da largura da tela */
+  margin: 0 auto; /* Centraliza o container e adiciona margens automáticas */
+}
+  
+  .menu-icon {
+    cursor: pointer;
+    font-size: 17px;
+    padding-left: 41.5%;
+    padding-top: 0.65%;
+  }
+  
+  .menu-logo {
+    width: auto; /* Remove a largura fixa */
+    max-height: 40px; /* Define uma altura máxima para evitar distorção */
+  }
+  
+  .menu-pag{
+    margin-top: 0.9%;
+  }
+
+  .academy{
+  background-color: transparent; /* Torna o fundo transparente */
+  border: 3px solid white; /* Adiciona uma borda branca de 2px */
+  border-radius: 4px; /* Arredonda as bordas */
+  padding: 10px 10px 10px 10px;
+  }
+  
+  
+  .menu-imagem {
+    margin-left: 40px;
+    width: 40px;
+    max-height: auto;
+  }
+
+  .progress-container {
+    position: fixed;
+    top: 74px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    z-index: 9999; /* Garante que a barra fique acima de outros elementos */
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background: #ffffff; /* Cor da barra de progresso */
+    transition: width 0.6 s ease-in-out; /* Adiciona uma transição suave */
+    border-radius: 0px 40px 40px 0px;
+  }
+  
+  
+  
+  .sub-menu {
+    display: none;
+    background-color: rgba(165, 80, 0, 0.4); /* Altere a opacidade ajustando o último valor (0.9) */
+    padding: 30px;
+    min-width: 10px;
+    margin-left: 216px;
+    color: #041553;
+  }
+  
+  
+  
+  .expandable1 > a:after {
+    content: " ▼";
+    display: inline-flex; /* Mudamos para inline-flex */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    margin-left: 2.1rem;
+  }
+
+  
+  .expandable2 > a:after {
+    content: " ▼";
+    display: inline-flex; /* Mudamos para inline-flex */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    margin-left: 1.4rem;
+  }
+  
+  
+  .expandable3 > a:after {
+    content: " ▼";
+    display: inline;
+    margin-left: 4.8rem;
+  }
+
+  .expandable4 > a:after {
+    content: " ▼";
+    display: inline;
+    margin-left: 22.4rem;
+  }
+
+  .expandable5 > a:after {
+    content: " ▼";
+    display: inline;
+    margin-left: 20.4rem;
+  }
+
+  
+  
+  
+  .produtos{
+    padding-left: 10px;
+    padding-bottom: 20px;
+  }
+  
+  .sub-menu-produtos h2 {
+    color: white;
+  }
+  
+  
+  .sidebar {
+    width: 0;
+    height: 100%;
+    position: fixed; /* Importante para o z-index funcionar */
+    z-index: 9999; /* Defina um valor menor para ficar em segundo plano */
+    top: 0;
+    left: 0;
+    background-color: #bd5200;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    color: white;
+  }
+  
+  .sidebar a{
+    color: white;
+    text-decoration: none;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding-left: 50px;
+  }
+  
+  .sidebar li {
+    padding: 10px;
+  }
+  
+  .content {
+    margin-left: 33.33%;
+    /* Rest of your content styles */
+  }
+  
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul li {
+    margin: 0 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+/* ----------------- Head ------------------------- */
+/* ----------------- Main ------------------------- */
+
+body {
+    font-family: var(--fonte-principal);
+    color: var(--cor-texto-principal);
+    background-color: var(--cor-fundo);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container img{
+    max-width: 20%;
+    max-height: auto;
+    padding: 3em 0em;
+}
+
+section {
+    background-color: var(--cor-fundo-secao);
+    padding: 60px 0;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: var(--cor-texto-principal);
+}
+
+/* Seção Hero */
+#hero {
+    background-image: url('../img/Gemini_Generated_Image_rmh5c4rmh5c4rmh5.png'); /* Troque pela sua imagem de destaque */
+    background-size: cover;
+    background-position: center;
+    color: var(--cor-fundo-secao);
+    padding: 100 0;
+    text-align: center;
+    position: relative; /* Adicione position: relative para o posicionamento absoluto do pseudo-elemento */
+    overflow: hidden; /* Opcional: para garantir que o pseudo-elemento não vaze se redimensionado */
+}
+
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Proporção 16:9 (altura/largura * 100) */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse as bordas */
+    padding: 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+#hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: var(--cor-texto-principal);
+    position: relative; /* Garante que o texto fique acima do background do botão */
+    z-index: 1; /* Garante que o texto fique acima do background do botão */
+}
+
+#hero p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: var(--cor-texto-secundario);
+    position: relative; /* Garante que o texto fique acima do background do botão */
+    z-index: 1; /* Garante que o texto fique acima do background do botão */
+}
+
+.botao-principal {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-secundario);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.6em;
+    transition: background-color 0.3s ease;
+    position: relative; /* Necessário para posicionar o pseudo-elemento */
+    overflow: hidden; /* Opcional: para garantir que a imagem de fundo não vaze */
+}
+
+.botao-principal:hover {
+    background-color: darken(var(--cor-primaria), 10%); /* Função darken pode precisar de pré-processador CSS ou ser substituída */
+}
+
+/* Estilo para a imagem de background do botão */
+.botao-principal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/georgios.jpg'); /* Troque pelo caminho da sua imagem para o botão */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* Ajuste a opacidade da imagem conforme necessário */
+    z-index: -1; /* Coloca a imagem atrás do texto do botão */
+    border-radius: inherit; /* Herda o border-radius do botão */
+    transition: opacity 0.3s ease; /* Opcional: para criar um efeito de transição na opacidade */
+}
+
+.botao-principal:hover::before {
+    opacity: 0.8; /* Exemplo de mudança de opacidade ao passar o mouse */
+}
+
+/* ... outros estilos ... */
+
+
+.orange-band {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    font-size: 1.2em;
+}
+
+.band-content {
+    display: inline-block;
+    /* Aumente a largura para acomodar o conteúdo duplicado */
+    width: calc(100% + /* Largura original */ + (/* Largura do conteúdo original */ * 1.1));
+    animation: scrollText 15s linear infinite; /* Ajuste a duração conforme necessário */
+}
+
+.band-item {
+    display: inline-block;
+    margin: 0 40px;
+    font-size: 1.4em;
+}
+
+.white-dot {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    margin-right: 8px;
+    margin-left: 68px;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(100%);
+    }
+    50% { /* O ponto médio da animação */
+        transform: translateX(0%); /* O primeiro conjunto de texto estará saindo */
+    }
+    100% {
+        transform: translateX(-100%); /* O segundo conjunto de texto estará saindo */
+    }
+}
+
+/* Seção Benefícios */
+#beneficios ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 50px;
+    text-align: center;
+}
+
+#beneficios li {
+    padding: 20px;
+    border: 1px solid;
+    border-radius: 30px 30px 0px 0px;
+    background-color: var(--cor-primaria);
+}
+
+#beneficios li img {
+    filter: brightness(0) invert(1);
+    max-width: 80px; /* Ajuste o tamanho conforme necessário */
+    display: block; /* Para centralizar a imagem no li */
+    margin: 0 auto 10px auto; /* Centraliza horizontalmente e adiciona margem inferior */
+}
+
+#beneficios h2{
+    font-size: 2.8em;
+    font-weight: bold;
+    text-align: left;
+}
+
+#beneficios h3 {
+    font-size: 1.5em;
+    font-weight: lighter;
+    margin-bottom: 10px;
+    color: var(--cor-texto-secundario);
+}
+
+#beneficios p {
+    font-size: 0.9em;
+    font-weight: lighter;
+    margin-bottom: 10px;
+    color: var(--cor-texto-secundario);
+}
+
+.botao-secundario {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-secundario);
+    margin-top: 5rem;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.6em;
+    transition: background-color 0.3s ease;
+    position: relative; /* Necessário para posicionar o pseudo-elemento */
+    overflow: hidden; /* Opcional: para garantir que a imagem de fundo não vaze */
+}
+
+.botao-secundario:hover {
+    background-color: darken(var(--cor-primaria), 10%); /* Função darken pode precisar de pré-processador CSS ou ser substituída */
+}
+
+/* Estilo para a imagem de background do botão */
+.botao-secundario::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/georgios.jpg'); /* Troque pelo caminho da sua imagem para o botão */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* Ajuste a opacidade da imagem conforme necessário */
+    z-index: -1; /* Coloca a imagem atrás do texto do botão */
+    border-radius: inherit; /* Herda o border-radius do botão */
+    transition: opacity 0.3s ease; /* Opcional: para criar um efeito de transição na opacidade */
+}
+
+.botao-secundario:hover::before {
+    opacity: 0.8; /* Exemplo de mudança de opacidade ao passar o mouse */
+}
+
+
+/* Seção Sobre a Mentoria */
+#sobre {
+    text-align: left;
+}
+
+#sobre .container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+#sobre img {
+    max-width: 50%;
+    border-radius: 5px;
+}
+
+#sobre div {
+    flex: 1;
+}
+
+#sobre h2 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+}
+
+#sobre p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: var(--cor-texto-secundario);
+}
+
+.modulos ul{
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.modulos li{
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.modulos h3{
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.modulos p{
+    color: var(--cor-texto-secundario);
+}
+
+
+
+/* Seção Depoimentos */
+#depoimentos {
+    background-color: #eee;
+}
+
+#depoimentos .container {
+    display: flex;
+    overflow-x: auto;
+    gap: 30px;
+    padding: 30px;
+}
+
+.depoimento {
+    background-color: var(--cor-fundo-secao);
+    border-radius: 5px;
+    padding: 30px;
+    min-width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.depoimento p {
+    font-style: italic;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 15px;
+}
+
+.depoimento cite {
+    display: block;
+    font-weight: bold;
+    color: var(--cor-texto-principal);
+    text-align: right;
+}
+
+/* Seção CTA (Chamada para Ação) */
+#cta {
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo-secao);
+    padding: 80px 0;
+}
+
+#cta h2 {
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    color: var(--cor-texto-secundario);
+}
+
+#cta p{
+    color: var(--cor-texto-secundario);
+}
+
+.botao-terciario {
+    display: inline-block;
+    background-color: var(--cor-texto-secundario);
+    color: var(--cor-texto-principal);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.6em;
+    transition: background-color 0.3s ease;
+    position: relative; /* Necessário para posicionar o pseudo-elemento */
+    overflow: hidden; /* Opcional: para garantir que a imagem de fundo não vaze */
+}
+
+
+
+/* Seção Plano e Preços */
+#planos {
+    text-align: center; /* Centraliza o título e o plano único */
+    padding: 80px 0; /* Aumenta o padding para destacar a seção */
+}
+
+#planos .container {
+    max-width: 600px; /* Limita a largura do container para o plano único */
+    margin: 0 auto; /* Centraliza o container */
+}
+
+.plano.unico-plano {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 40px; /* Aumenta o padding interno do plano */
+    text-align: center; /* Centraliza o conteúdo do plano */
+}
+
+.plano.unico-plano h3 {
+    font-size: 2em; /* Aumenta a fonte do título da mentoria */
+    margin-bottom: 20px;
+    color: var(--cor-primaria);
+}
+
+.preco-original {
+    font-size: 1.2em;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 5px;
+}
+
+.preco-destaque {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+}
+
+.parcelamento {
+    font-size: 1.1em;
+    color: var(--cor-texto-principal);
+    margin-bottom: 20px;
+}
+
+.plano.unico-plano ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.plano.unico-plano li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    text-align: left; /* Alinha os itens da lista à esquerda */
+}
+
+.plano.unico-plano li:last-child {
+    border-bottom: none;
+}
+
+.botao-plano {
+    display: inline-block;
+    background-color: var(--cor-primaria); /* Use a cor primária para o botão principal */
+    color: var(--cor-fundo-secao);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: 1.1em;
+}
+
+.botao-plano:hover {
+    background-color: var(--cor-texto-secundario);
+    color: var(--cor-texto-principal);
+}
+
+/* Remove estilos de grid para um único plano */
+#planos .container {
+    display: block; /* Altera para block para ocupar a largura limitada */
+}
+
+/* Seção FAQ */
+#faq {
+    text-align: left;
+}
+
+#faq h2 {
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.pergunta {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.pergunta h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.resposta {
+    color: var(--cor-texto-secundario);
+    display: none; /* Oculto por padrão, para ser mostrado com JS se desejar interatividade */
+    margin-top: 10px;
+}
+
+
+/* Seção Quem Será o Professor */
+#quem-sera-professor {
+    background-image: url('../img/professor/background-professor.png');
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Cor do texto principal */
+    padding: 80px 0; /* Ajuste o espaçamento vertical conforme necessário */
+    text-align: left;
+}
+
+.professor-container {
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto;
+    display: flex;
+    align-items: center; /* Alinha verticalmente os itens */
+    justify-content: space-between; /*  Espaço entre texto e imagem */
+    padding: 0 20px; /* Espaçamento nas laterais do container */
+}
+
+.texto-container {
+    flex: 1; /* O texto ocupa a maior parte do espaço disponível */
+    padding-right: 40px; /* Espaçamento à direita do texto */
+    text-align: left;
+    font-size: 1.2em;
+    max-width: 70%; /* Limita a largura do contêiner de texto à metade do pai */
+}
+
+.texto-container h2 {
+    font-size: 2.8em; /* Tamanho do título */
+    margin-bottom: 20px;
+    color: var(--cor-texto-secundario); /* Cor amarela do título (aproximada) */
+    text-align: left;
+}
+
+.texto-container p {
+    font-size: 1.6em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.texto-container ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.texto-container ul li {
+    font-size: 1em;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    text-align: left;
+}
+
+.texto-container ul li::before {
+    content: "•"; /* Bullet point estilizado */
+    color: #ffffff; /* Cor amarela do bullet point */
+    position: absolute;
+    left: 0;
+    top: 0; /* Alinha o bullet point com a linha do texto */
+}
+
+.imagem-container {
+    flex-shrink: 0; /* Evita que a imagem encolha demais */
+    width: 350px; /* Largura aproximada da imagem */
+    border-radius: 10px; /* Borda arredondada na imagem */
+    overflow: hidden; /* Garante que a borda arredondada funcione */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Sombra suave */
+}
+
+#imagem-professor {
+    display: block; /* Remove qualquer espaçamento extra abaixo da imagem */
+    width: 100%;
+    height: auto;
+}
+
+/* Media Queries para responsividade (opcional) */
+@media (max-width: 768px) {
+    .professor-container {
+        flex-direction: column; /* Empilha texto e imagem em telas menores */
+        text-align: left;
+    }
+
+    .texto-container {
+        padding-right: 0;
+        margin-bottom: 30px;
+        text-align: left;
+        max-width: 10
+
+/* ----------------- Main ------------------------- */
+/* ----------------- Footer ------------------------- */

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias</title>
+    <link rel="stylesheet" href="style/style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V711FNXE6Q"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-V711FNXE6Q');
+    </script>
+
+    <!-- Google Tag Manager - GTM HEAD -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KBNCM252');</script>
+    <!-- End Google Tag Manager -->
+    
+</head>
+
+<!------------------------------------------- MENU ------------------------------------>
+<body id="top">
+
+<!-- Google Tag Manager - GTM BODY (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBNCM252"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<header >
+    <nav>
+      <ul class="menu">
+        <a href="http://arremate.legal/"><img class="menu-logo" src="../regras-de-desconto/img/Menu/logo-branco.png"></a>
+        <li class="menu-icon" onclick="toggleMenu()">&#9776;<a href="#">Cursos</a></li>
+        <li class="menu-pag"><a href="https://www.alexandridisleiloes.com.br/">Leilões</a></li>
+        <li class="menu-pag"><a href="index.html">Notícias</a></li>
+        <li class="menu-pag"><a href="index.html">Contato</a></li>
+        <li class="menu-pag"><a href="https://www.alexandridis.prof/mentoria-leiloes" class="academy">Mentoria</a></li>
+        <img src="img/Menu/lupa.svg"  class="menu-imagem">
+      </ul>
+    </nav>
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+    </div>
+  </header>
+
+  
+
+      <aside class="sidebar" id="sidebar">
+        <ul class="sub-menu-produtos">
+          <h2 class="produtos"> Cursos </h2>
+          <li class="expandable1"><a href="https://www.alexandridis.prof/como">Como Identificar Oportunidades de Imóveis em Leilão</a></li>
+          <li class="expandable2"><a href="https://www.alexandridis.prof/leiloes-de-imoveis-judiciais-civeis-para-corretores(as)">Leilões de IMóveis Judiciais Cíveis para Corretores(as)</a></li>
+          <li class="expandable3"><a href="https://www.alexandridis.prof/mentoria-leiloes">Mentoria Lucrando com leilões Judiciais Cíveis</a></li>
+          <li class="expandable4"><a href="https://www.alexandridis.prof/leiloes-judiciais-de-imoveis-na-pratica">Leilões Judiciais de Imóveis na Prática</a></li>
+           <li class="expandable5"><a href="http://arremate.legal/roots/regras-de-desconto/regras.html">Descontos</a></li>
+          <li class="expandable5"><a href="">Em breve...</a></li>
+        </ul>
+      </aside>
+
+<!-------------------------------------------- MENU ------------------------------------>
+<!------------------------------------------- MAIN ------------------------------------>
+<main>
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content-wrapper">
+        <p class="hero-breadcrumb">Início / Notícias</p>
+        <h1>Conheça mais sobre o Universo dos Leilões de Imóveis</h1>
+        <p>Na Alexandridis Leilões, você encontra insights e informações valiosas sobre o mercado, guias e tendências.</p>
+    </div>
+</section>
+
+<section class="category-carousel-section">
+    <div class="category-carousel-container">
+        <button class="category-carousel-arrow category-left-arrow" aria-label="Anterior">←</button>
+        <div class="category-carousel-track-container">
+            <div class="category-carousel-track" id="categoryCarouselTrack">
+                <div class="category-card" data-category="leiloes">
+                    <div class="category-card-icon">
+                        <img src="../noticias/img/main/section-hero/icon-leiloes.png" alt="Ícone Leilões"> 
+                    </div>
+                    <h2>Leilões</h2>
+                    <p>Segmentos de Leilões de Imóveis</p>
+                    <button class="category-btn-noticias">Notícias</button>
+                </div>
+                <div class="category-card" data-category="guia">
+                    <div class="category-card-icon">
+                        <img src="img/icon-guia.png" alt="Ícone Guia">
+                    </div>
+                    <h2>Guia</h2>
+                    <p>Guia para arrematar imóveis</p>
+                    <button class="category-btn-noticias">Notícias</button>
+                </div>
+                <div class="category-card" data-category="mercado">
+                    <div class="category-card-icon">
+                        <img src="img/icon-mercado.png" alt="Ícone Mercado">
+                    </div>
+                    <h2>Mercado</h2>
+                    <p>Sobre o mercado de Leilões de Imóveis</p>
+                    <button class="category-btn-noticias">Notícias</button>
+                </div>
+                </div>
+        </div>
+        <button class="category-carousel-arrow category-right-arrow" aria-label="Próximo">→</button>
+    </div>
+</section>
+
+
+  <section>
+    <div class="categories">
+      <select id="category">
+        <option value="todos">Todos</option>
+        <option value="IMOB">Leilões de Imóveis</option>
+        <option value="GUIA">Guia do Arrematante</option>
+        <option value="MER">Mercado</option>
+        <option value="LS">Life Style</option>
+        <option value="LUG">Lugares</option>
+        <option value="GLOS">Glossário</option>
+      </select>
+    </div>
+
+    <div class="category-buttons">
+      <button class="category-button" data-category="todos"><strong>Todos</strong></button>
+      <button class="category-button" data-category="IMOB"><strong>Leilões de Imóveis</strong> </button>
+      <button class="category-button" data-category="GUIA"><strong>Guia do Arrematante</strong> </button>
+      <button class="category-button" data-category="MER"><strong>Mercado</strong> </button>
+      <button class="category-button" data-category="LS"><strong>Life Style</strong> </button>
+      <button class="category-button" data-category="LUG"><strong>Lugares</strong></button>
+      <button class="category-button" data-category="GLOS"><strong>Glossário</strong> </button>
+    </div>
+
+    <div class="product-grid">
+      
+      <div class="product MER">
+        <a href="roots/mercado/noticias-e-novidades/01-dívida-de-IPTU-de-imóvel/dívida-de-IPTU-de-imóvel.html">
+          <img src="img/main/section-categories/MER/13.png" class="product-img">
+          <div class="text-product">
+            <span class="category-tag">Mercado</span>
+            <h3>Banco não responde por dívida de IPTU de imóvel financiado</h3>
+          </div>
+          <br>
+          <div class="ler-mais">
+            <a>Ler mais</a>
+          </div>
+        </a>
+      </div>
+
+      <div class="product MER">
+        <a href="roots/mercado/analise-e-insights/01-millennials-e-geracao-x/millennials-e-geracao-x.html">
+          <img src="img/main/section-categories/MER/14.png" class="product-img">
+          <div class="text-product">
+            <span class="category-tag">Mercado</span> 
+            <h3><strong>Leilões para Millennials e Geração X:</strong> Seu Lar e Investimento</h3>
+          </div>
+          <br>
+          <div class="ler-mais">
+            <a>Ler mais</a>
+          </div>
+        </a>
+      </div>
+
+      <div class="product MER">
+        <a href="roots/mercado/noticias-e-novidades/02-condomínio-e-penhora-nova-regra-STJ/dívida-de-IPTU-de-imóvel.html">
+          <img src="img/main/section-categories/MER/15.png" class="product-img">
+          <div class="text-product">
+            <span class="category-tag">Mercado</span> 
+            <h3><strong>Condomínio e Penhora: </strong>A Nova Regra do STJ</h3>
+          </div>
+          <br>
+          <div class="ler-mais">
+            <a>Ler mais</a>
+          </div>
+        </a>
+      </div>
+
+      <div class="product GUIA">
+        <a href="roots/guia/como-funciona/01-O-que-saber-antes-de-arrematar/saber-antes-de-arrematar.html">
+          <img src="img/main/section-categories/GUIA/1.png" class="product-img">
+          <div class="text-product">
+            <span class="category-tag">Guia do Arrematante</span>
+            <h3><strong>Estado de Conservação:</strong> O Que Saber Antes de Arrematar um Imóvel em Leilão</h3>
+          </div>
+          <br>
+          <div class="ler-mais">
+            <a>Ler mais</a>
+          </div>
+        </a>
+      </div>
+
+      <div class="product GUIA">
+        <a href="roots/guia/como-funciona/02-Desvendando-o-Edital/Desvendando-o-Edital.html">
+          <img src="img/main/section-categories/GUIA/2.png" class="product-img">
+          <div class="text-product">
+            <span class="category-tag">Guia do Arrematante</span>
+            <h3><strong>Desvendando o Edital:</strong> Como ler e entender esse documento tão importante!</h3>
+          </div>
+          <br>
+          <div class="ler-mais">
+            <a>Ler mais</a>
+          </div>
+        </a>
+      </div>
+
+      <div class="product IMOB">
+        <a href="roots/leiloes/judiciais-e-extrajudiciais/01.leiloes-judiciais-vs-extrajudiciais/leiloes-judiciais-vs-extrajudiciais.html">
+          <img src="../noticias/img/main/section-categories/IMOB/1.png" class="product-img">
+          <div class="text-product">
+            <span class="category-tag">Leilões de Imóveis</span> 
+            <h3><strong>Leilões Judiciais vs. Extrajudiciais: </strong>5 Perguntas Essenciais</h3>
+          </div>
+          <br>
+          <div class="ler-mais">
+            <a>Ler mais</a>
+          </div>
+        </a>
+      </div>
+
+      <div class="product LS">
+        <a href="">
+          <img src="../noticias/img/main/section-categories/LS/6.png" class="product-img">
+          <div class="text-product">
+            <span class="category-tag">Lifestyle</span>
+            <h3><strong>Reforma: </strong>Quanto tempo leva uma reforma de apartamento?</h3>
+          </div>
+          <br>
+          <div class="ler-mais">
+            <a>Ler mais</a>
+          </div>
+        </a>
+      </div>
+
+      <div class="product MER">
+        <a href="">
+          <img src="../noticias/img/main/section-categories/MER/9.png" class="product-img">
+          <div class="text-product">
+            <span class="category-tag">Mercado</span>
+            <h3><strong>Direitos do Compromissário Comprador: </strong>Como funcionam</h3>
+          </div>
+          <br>
+          <div class="ler-mais">
+            <a>Ler mais</a>
+          </div>
+        </a>
+      </div>
+
+      <div class="product GUIA">
+        <a href="">
+          <img src="../noticias/img/main/section-categories/GUIA/8.png" class="product-img">
+          <div class="text-product">
+            <span class="category-tag">Guia do Arrematante</span>
+            <h3><strong>Leilão Online:</strong> Como funciona o leilão online e como participar</h3>
+          </div>
+          <br>
+          <div class="ler-mais">
+            <a>Ler mais</a>
+          </div>
+        </a>
+      </div>
+
+
+      <div class="product MER">
+        <a href="">
+          <img src="../noticias/img/main/section-categories/MER/7.png" class="product-img">
+          <div class="text-product">
+            <span class="category-tag">Mercado</span>
+            <h3><strong>Alienação Fiduciária:</strong> Taxa de Ocupação em Leilões de Alienação Fiduciária</h3>
+          </div>
+          <br>
+          <div class="ler-mais">
+            <a>Ler mais</a>
+          </div>
+        </a>
+      </div>
+
+      <div class="product MER">
+        <a href="">
+          <img src="../noticias/img/main/section-categories/MER/5.png" class="product-img">
+          <div class="text-product">
+            <span class="category-tag">Mercado</span>
+            <h3><strong>Imposto de Renda sobre leilão: </strong>Tudo o que você precisa saber</h3>
+          </div>
+          <br>
+          <div class="ler-mais">
+            <a>Ler mais</a>
+          </div>
+        </a>
+      </div>
+
+      <div class="product MER">
+        <a href="">
+          <img src="../noticias/img/main/section-categories/MER/4.png" class="product-img">
+          <div class="text-product">
+            <span class="category-tag">Mercado</span>
+            <h3><strong>Estado de Conservação: </strong>O Que Saber Antes de Arrematar um Imóvel em Leilão</h3>
+          </div>
+          <br>
+          <div class="ler-mais">
+            <a>Ler mais</a>
+          </div>
+        </a>
+      </div>
+
+
+      </div>
+  </section>
+</main>
+<!------------------------------------------- Página ------------------------------------>
+<!------------------------------------------- Main ------------------------------------>
+
+<footer>
+    <div class="linha-laranja-topo"></div> 
+
+    <section class="boxes-container"> 
+        <div class="box">
+            <h2>Alexandridis</h2>
+            <br>
+            <p>Imóveis</p>
+            <p>Sobre o Alexandridis</p>
+            <p>Notícias</p>
+            <p>Contato</p>
+            <p>Cursos</p>
+            <div class="back-to-top-button">
+                <a href="#top" id="backToTop"> 
+                    <img src="img/Footer/seta.png" alt="Voltar ao topo"> <span>Voltar ao topo</span>
+                </a>
+            </div>
+        </div>
+        <div class="box">
+            <h2>+ Informações</h2>
+            <br>
+            <p>Dúvidas</p>
+            <p>Política de Privacidade</p>
+        </div>
+        <div class="box">
+            <h2>Fale Comigo</h2>
+            <br>
+            <p>Telefone / WhatsApp</p>
+            <p><strong>Whatsapp:</strong>(11) 98264-4222</p>
+            <p><strong>E-mail:</strong>contato@alexandridisleiloes.com</p>
+        </div>
+        <div class="box newsletter-box">
+            <h2>Newsletter</h2>
+            <br>
+            <p>Receba minhas promoções, novidades e conteúdos por email</p>
+            <div class="email-box">
+                <input type="email" id="email-input" placeholder="Digite seu e-mail">
+                <button class="enviar-button">Enviar</button>
+            </div>
+            <br>
+            <h3>Mídias</h3>
+            <section class="social-icons">
+                <a href="#" class="social-icon">
+                    <img src="img/footer/icon-tiktok.png" alt="TikTok">
+                </a>
+                <a href="#" class="social-icon">
+                    <img src="img/footer/icon-facebook.png" alt="Facebook">
+                </a>
+                <a href="#" class="social-icon">
+                    <img src="img/footer/icon-instagram.png" alt="Instagram">
+                </a>
+                <a href="#" class="social-icon">
+                    <img src="img/footer/icon-linkedin.png" alt="LinkedIn">
+                </a>
+                <a href="#" class="social-icon">
+                    <img src="img/footer/icon-youtube.png" alt="Youtube">
+                </a>
+            </section>
+        </div>
+    </section>
+
+    <div class="whatsapp-button">
+        <a href="https://api.whatsapp.com/send?phone=5511982644222" target="_blank">
+            <img src="img/footer/icon-whatsapp.png" alt="WhatsApp">
+        </a>
+    </div>
+
+    <div class="direitos-autorais">
+        <p>&copy; 2025 Professor Alexandridis. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<!------------------------------------------- Footer ------------------------------------>
+    <script src="script/script.js"></script>
+</body>
+</html>

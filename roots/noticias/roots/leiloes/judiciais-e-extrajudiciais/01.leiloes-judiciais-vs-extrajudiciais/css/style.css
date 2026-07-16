@@ -1,0 +1,1399 @@
+/* -------------------------------- MENU -------------------------------- */
+/* Variáveis de Cor */
+:root {
+    --cor-primaria: #FF6D00; /* Laranja */
+    --cor-secundaria: #30AFBF; /* Azul turquesa */
+    --cor-texto-principal: #FF6D00;
+    --cor-texto-secundario: #ffffff;
+    --cor-fundo: #f8f9fa;
+    --cor-fundo-secao: #000000;
+    --cor-fundo-menu-lateral: #BD5200; /* Laranja mais escuro, semelhante ao da imagem */
+    --fonte-principal: Arial, sans-serif;
+}
+
+/* Estilos gerais */
+body {
+    font-family: var(--fonte-principal);
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo);
+    line-height: 1.6;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ----------------- Header Global ------------------------- */
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-secundario);
+    padding: 15px 0;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Navegação Principal Wrapper */
+.header-nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Logo */
+.header-menu-logo {
+    width: auto;
+    max-height: 50px;
+    flex-shrink: 0;
+}
+
+/* Menu Principal */
+.header-main-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    /* Adicione justify-content aqui para controle mais preciso se header-nav-wrapper for flex-container único */
+    /* Se header-nav-wrapper já tem space-between, isso pode não ser necessário */
+}
+
+/* Item do Ícone de Hambúrguer/Menu (para ambos: desktop e mobile) */
+.header-menu-icon {
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 5px 15px;
+    color: var(--cor-texto-secundario);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* Ordem padrão no desktop, será alterada no mobile */
+    order: unset; /* ou order: 0; ou order: 1; para garantir a ordem base */
+    margin-right: 5px; /* Espaço entre o ícone e o texto "Cursos" no desktop */
+}
+
+/* Ícone de Hambúrguer visível sempre */
+.header-menu-icon::before {
+    content: "\2630"; /* Unicode para o ícone de hambúrguer */
+    font-size: 1.5rem;
+    margin-right: 5px; /* Espaço entre o ícone e o texto "Cursos" no desktop */
+}
+
+/* Texto "Cursos" ao lado do ícone, visível APENAS no desktop */
+.header-menu-icon .desktop-show-cursos {
+    display: none; /* Esconde por padrão */
+}
+@media screen and (min-width: 769px) {
+    .header-menu-icon .desktop-show-cursos {
+        display: inline; /* Mostra no desktop */
+    }
+}
+
+
+/* Itens de página (Leilões, Notícias, Contato) - Desktop Only */
+.header-menu-pag {
+    margin: 0 15px;
+}
+
+.header-menu-pag a {
+    color: var(--cor-texto-secundario);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.header-menu-pag a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* Botão Mentoria */
+.header-academy-btn {
+    background-color: transparent;
+    border: 3px solid var(--cor-texto-secundario);
+    border-radius: 4px;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
+    color: var(--cor-texto-secundario);
+}
+
+.header-academy-btn:hover {
+    background-color: var(--cor-texto-secundario);
+    color: var(--cor-primaria);
+}
+
+/* Ícone de Lupa */
+.header-search-icon {
+    cursor: pointer;
+    margin-left: 20px;
+    /* Remover ou comentar as linhas abaixo se não quiser que o texto/tamanho do ícone unicode afetem */
+    /* color: var(--cor-texto-secundario); */
+    /* font-size: 1.5rem; */
+    
+    display: inline-block; /* Mantém o display para que as dimensões funcionem */
+
+    /* ***** NOVO CÓDIGO PARA A IMAGEM ***** */
+    width: 24px; /* Largura da sua imagem de lupa (ajuste conforme necessário) */
+    height: 24px; /* Altura da sua imagem de lupa (ajuste conforme necessário) */
+    background-image: url('img/Menu/lupa.svg'); /* <--- SUBSTITUA ESTE CAMINHO PELA SUA IMAGEM */
+    background-size: contain; /* Garante que a imagem se ajuste ao elemento */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    background-position: center; /* Centraliza a imagem dentro do elemento */
+    /* ************************************* */
+}
+
+
+/* --------------- Barra de Progresso de Leitura --------------- */
+.header-progress-container {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    z-index: 9998;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.header-progress-bar {
+    height: 100%;
+    background: var(--cor-secundaria);
+    width: 0%;
+    transition: width 0.3s ease-out;
+    border-radius: 0 3px 3px 0;
+}
+
+/* ----------------- Sidebar (Menu Lateral) ------------------------- */
+.sidebar-main {
+    height: 100%;
+    width: 0; /* Começa fechado */
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0; /* Abre da esquerda para a direita */
+    background-color: var(--cor-fundo-menu-lateral);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    color: var(--cor-texto-secundario);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Estado ABERTO da Sidebar */
+.sidebar-main.open {
+    width: 400px; /* Largura padrão para desktop */
+}
+
+.sidebar-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 3rem;
+    color: var(--cor-texto-secundario);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar-close-btn:hover {
+    color: var(--cor-secundaria);
+}
+
+/* Menu Principal da Sidebar */
+.sidebar-primary-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Itens de Nível Superior da Sidebar (Cursos, Leilões, Notícias, Contato, Mentoria) */
+.sidebar-menu-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.sidebar-menu-item:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.sidebar-menu-item:last-child {
+    border-bottom: none;
+}
+
+.sidebar-menu-item a {
+    color: var(--cor-texto-secundario);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.sidebar-menu-item a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* Estilos específicos para o item "Cursos" (com sub-menu) */
+.sidebar-menu-item.has-submenu .sidebar-submenu-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebar-menu-item.has-submenu .sidebar-submenu-toggle::after {
+    content: "\25BC"; /* Seta para baixo */
+    font-size: 0.8em;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Rotação da seta quando o sub-menu está ativo (aberto) */
+.sidebar-menu-item.has-submenu.active .sidebar-submenu-toggle::after {
+    transform: rotate(-180deg); /* Seta para cima */
+}
+
+/* Sub-menu de Cursos (inicia escondido por padrão para accordion) */
+.sidebar-submenu {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    max-height: 0; /* Escondido por padrão para accordion */
+    transition: max-height 0.5s ease-out;
+    border-radius: 4px;
+}
+
+.sidebar-submenu-item {
+    padding: 10px 20px 10px 40px; /* Padding para recuo e clique */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-submenu-item:last-child {
+    border-bottom: none;
+}
+
+.sidebar-submenu-item a {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+/* Classe para mostrar o sub-menu */
+.sidebar-submenu.open {
+    max-height: 500px; /* Altura máxima grande o suficiente para todos os itens */
+}
+
+/* Botão Mentoria na Sidebar */
+.sidebar-academy-btn {
+    background-color: transparent;
+    border: 2px solid var(--cor-texto-secundario);
+    border-radius: 4px;
+    padding: 8px 15px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: var(--cor-texto-secundario);
+}
+.sidebar-academy-btn:hover {
+    background-color: var(--cor-texto-secundario);
+    color: var(--cor-fundo-menu-lateral);
+}
+
+
+/* -------------------- Media Queries para Responsividade -------------------- */
+
+/* Para telas até 768px (tablets e celulares) - COMPORTAMENTO MOBILE */
+@media screen and (max-width: 768px) {
+    /* Esconde os itens do menu desktop no header */
+    .desktop-only {
+        display: none !important;
+    }
+
+    /* Esconde o texto "Cursos" ao lado do ícone no mobile, deixando apenas o ícone de hambúrguer */
+    .header-menu-icon .desktop-show-cursos {
+        display: none !important; 
+    }
+
+    /* Ajustes do header para mobile */
+    .header-menu-icon {
+        order: 2; /* Move o ícone de hambúrguer para o final do flex container (direita) */
+        margin-left: auto; /* Empurra para a direita usando margem automática */
+        margin-right: 0; /* Zera margem direita para não ter espaço extra */
+        padding-right: 15px; /* Mantém um padding à direita do ícone para espaçamento visual */
+        padding-left: 5px; /* Ajusta padding à esquerda do ícone */
+    }
+
+    /* O container principal do header já tem justify-content: space-between */
+    .header-main-menu { 
+        /* Não precisa de justify-content aqui se o nav-wrapper já o tem e envolve tudo */
+        width: auto; /* Volta ao padrão */
+        padding: 0; /* Remover padding se header-nav-wrapper já cuida disso */
+    }
+
+    /* Certifique-se que o wrapper principal tenha space-between */
+    .header-nav-wrapper {
+        justify-content: space-between; /* ESSENCIAL para empurrar a logo para um lado e o menu para o outro */
+        padding: 0 10px;
+    }
+    
+    .header-menu-logo {
+        max-height: 45px;
+    }
+
+    .header-progress-container {
+        top: 75px;
+        height: 5px;
+    }
+
+    /* Ajuste da largura da sidebar para mobile quando aberta */
+    .sidebar-main.open {
+        width: 320px;
+        max-width: 85vw;
+    }
+
+    .sidebar-close-btn {
+        font-size: 2.5rem;
+        top: 10px;
+        right: 15px;
+    }
+
+    /* Ajustes de fonte e padding para melhor toque no mobile */
+    .sidebar-menu-item a { 
+        font-size: 1.1rem; 
+        padding: 10px 0;
+    }
+    .sidebar-submenu-item a {
+        font-size: 0.95rem;
+    }
+
+    /* MOSTRA os links principais replicados na sidebar mobile */
+    .sidebar-menu-item.mobile-only-sidebar-link {
+        display: block !important; 
+    }
+}
+
+/* Para telas MAIORES que 768px (Desktop) - COMPORTAMENTO DESKTOP */
+@media screen and (min-width: 769px) {
+    /* Garante que o texto "Cursos" ao lado do ícone no header seja visível */
+    .header-menu-icon .desktop-show-cursos {
+        display: inline !important; 
+    }
+    /* Reinicia a ordem para o desktop para que o ícone fique no seu lugar original (ao lado do texto "Cursos") */
+    .header-menu-icon {
+        order: unset; /* Reverte a ordem definida para mobile */
+        margin-right: 5px; /* Restaura margem padrão do header */
+        margin-left: 0;
+        padding-right: 15px; /* Restaura padding padrão */
+        padding-left: 5px; /* Restaura padding padrão */
+    }
+
+
+    /* A sidebar no desktop deve conter APENAS o item de cursos */
+    .sidebar-menu-item:not(.has-submenu) { 
+        display: none !important; /* Esconde Leilões, Notícias, Contato, Mentoria da sidebar desktop */
+    }
+    /* Remover borda superior do item de Cursos, já que ele será o único visível */
+    #sidebarCoursesItem {
+        border-top: none; 
+    }
+
+    /* No desktop, o submenu de Cursos DEVE COMEÇAR SEMPRE ABERTO ao abrir a sidebar */
+    /* Remove a rotação da seta para o toggle no desktop, pois não haverá accordion */
+    .sidebar-menu-item.has-submenu .sidebar-submenu-toggle::after {
+        content: ""; /* Remove a seta para baixo/cima */
+    }
+    
+    /* Garante que o sub-menu esteja sempre aberto no desktop quando a sidebar estiver ativa */
+    .sidebar-main.open .sidebar-submenu {
+        max-height: 800px; 
+        transition: none; 
+    }
+    .sidebar-main.open .sidebar-menu-item.has-submenu {
+        transform: none; 
+        pointer-events: none; 
+    }
+    /* Remove o cursor de ponteiro para o item "Cursos" quando não é um toggle no desktop */
+    .sidebar-menu-item.has-submenu .sidebar-submenu-toggle {
+        cursor: default;
+    }
+}
+
+/* Para telas menores que 480px (celulares muito pequenos) */
+@media screen and (max-width: 480px) {
+    .header-menu-logo {
+        max-height: 40px;
+    }
+
+    .header-menu-icon {
+        font-size: 1rem;
+    }
+    .header-menu-icon::before {
+        font-size: 1.6rem;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    .header-progress-container {
+        top: 65px;
+    }
+
+    .sidebar-main.open {
+        width: 100%;
+        max-width: none;
+    }
+    .sidebar-menu-item a {
+        font-size: 1rem;
+    }
+    .sidebar-submenu-item a {
+        font-size: 0.9rem;
+    }
+}
+
+/* -------------------------------- MENU -------------------------------- */
+/* -------------------------------- Main ------------------------------- */
+
+/* Estilos globais e de corpo para contexto */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    line-height: 1.6; /* Boa prática para legibilidade */
+    color: #333; /* Cor de texto padrão */
+}
+
+/* Base h1, h2, h3, h4, p (se você tiver estilos globais para eles, pode mantê-los aqui) */
+h1, h2, h3, h4, p {
+    font-family: Arial, sans-serif;
+}
+
+/* Container principal da introdução */
+.alx-main-introduction {
+    max-width: 1200px; /* Largura máxima para centralizar o conteúdo em telas grandes */
+    margin: 0 auto; /* Centraliza a main horizontalmente */
+    padding: 4.2rem 8rem 0rem 8rem; /* Padding geral para telas grandes */
+    box-sizing: border-box; /* Inclui padding na largura total */
+}
+
+/* Estilos para o Breadcrumb */
+.alx-main-breadcrumb-nav {
+    padding: 20px 0 15px; /* Mais controle de padding para espaçamento superior e inferior */
+    font-size: 0.95rem; /* Tamanho da fonte do breadcrumb */
+    color: #666; /* Cor padrão para texto do breadcrumb */
+    text-align: left; /* Alinha o breadcrumb à esquerda */
+}
+
+.alx-breadcrumb-list {
+    display: flex; /* Usar flexbox para alinhar os itens */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas pequenas */
+    align-items: center; /* Alinha verticalmente os itens */
+    gap: 0.5rem; /* Espaçamento entre os itens e separadores */
+}
+
+.alx-breadcrumb-item {
+    text-decoration: none;
+    color: #2AB0BF; /* Cor azul para links ativos */
+    white-space: nowrap; /* Evita quebra de linha nos links individuais */
+}
+
+.alx-breadcrumb-item:hover {
+    text-decoration: underline; /* Efeito hover para links do breadcrumb */
+}
+
+.alx-breadcrumb-item.alx-breadcrumb-current {
+    color: #2AB0BF; /* Cor para o item atual (não clicável) */
+    pointer-events: none; /* Desabilita clique no item atual */
+    text-decoration: none;
+}
+
+.alx-breadcrumb-separator {
+    color: #2AB0BF; /* Cor do separador */
+    margin: 0 0.2rem; /* Ajusta o espaçamento do separador */
+}
+
+/* Título e imagem principal */
+.alx-title-section {
+    text-align: left; /* Alinha o conteúdo à esquerda */
+    padding-bottom: 30px; /* Espaço abaixo da seção do título */
+}
+
+.alx-title-section h1 {
+    font-size: 3.0914rem; /* Tamanho da fonte grande para o título */
+    color: #FF6D00; /* Cor laranja para o título */
+    letter-spacing: -0.04em; /* Pequeno ajuste de espaçamento entre letras */
+    line-height: 1.1; /* Espaçamento entre linhas para títulos longos */
+    margin: 0 0 20px; /* Remove margem padrão e adiciona espaço abaixo */
+    font-weight: bold; /* Título em negrito */
+}
+
+.alx-title-section img {
+    width: 100%; /* Garante que a imagem ocupe a largura total do container */
+    max-width: 1000px; /* Define uma largura máxima para a imagem para que não fique gigante */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 40px; /* Bordas arredondadas */
+    margin-top: 15px; /* Espaço acima da imagem */
+    display: block; /* Garante que a margem auto funcione para centralizar se max-width for ativada */
+    margin-left: auto; /* Centraliza a imagem se ela tiver max-width */
+    margin-right: auto; /* Centraliza a imagem se ela tiver max-width */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil para destaque */
+}
+
+/* -------------------- Media Queries para Responsividade -------------------- */
+
+/* Para tablets e laptops pequenos (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .alx-main-introduction {
+        padding: 4.2rem 4rem 0rem 4rem; /* Padding geral para telas grandes */
+    }
+
+    .alx-main-breadcrumb-nav {
+        padding: 15px 0 10px;
+        font-size: 0.9rem;
+    }
+
+    .alx-title-section h1 {
+        font-size: 3rem; /* Reduz o tamanho do título */
+    }
+
+    .alx-title-section img {
+        max-width: 70rem; /* Reduz um pouco a max-width da imagem */
+        border-radius: 30px; /* Ajusta o border-radius */
+    }
+}
+
+/* Para celulares e tablets pequenos (max-width: 768px) */
+@media (max-width: 768px) {
+    .alx-main-introduction {
+         padding: 4.2rem 2rem 0rem 2rem; /* Padding geral para telas grandes */
+    }
+
+    .alx-main-breadcrumb-nav {
+        padding: 10px 0 8px;
+        font-size: 0.85rem;
+    }
+
+    .alx-breadcrumb-list {
+        gap: 0.3rem; /* Reduz o espaçamento entre itens */
+    }
+
+    .alx-breadcrumb-item {
+        white-space: normal; /* Permite que os links quebrem linha */
+    }
+
+    .alx-title-section h1 {
+        font-size: 2.2rem; /* Título ainda menor para caber na tela */
+        letter-spacing: -0.03em;
+        margin-bottom: 15px;
+    }
+
+    .alx-title-section img {
+        border-radius: 20px; /* Ajusta o border-radius */
+        margin-top: 10px;
+    }
+}
+
+/* Para celulares muito pequenos (max-width: 480px) */
+@media (max-width: 480px) {
+    .alx-main-introduction {
+         padding: 5.2rem 1rem 0rem 1rem; /* Padding geral para telas grandes */
+    }
+
+    .alx-main-breadcrumb-nav {
+        padding: 8px 0 5px;
+        font-size: 0.8rem;
+    }
+
+    .alx-title-section h1 {
+        font-size: 1.8rem; /* Título bem pequeno */
+        letter-spacing: -0.02em;
+        margin-bottom: 10px;
+    }
+
+    .alx-title-section img {
+        border-radius: 15px; /* Bordas arredondadas menores */
+    }
+}
+
+
+/* ----------------- Section Accordion ------------------------- */
+
+
+/* Container principal do acordeão */
+.accordion {
+    width: 80%; /* Largura para desktop */
+    max-width: 1000px; /* Limita a largura máxima em telas grandes */
+    margin: 40px auto; /* Centraliza e adiciona margem superior/inferior */
+    padding: 0 20px; /* Padding lateral para evitar que o conteúdo encoste nas bordas da tela */
+    box-sizing: border-box; /* Inclui padding na largura total */
+}
+
+/* Barra cinza entre os itens do acordeão */
+.barra-cinza {
+    width: 100%;
+    height: 3px;
+    background-color: #2AB0BF; /* Cor da barra */
+    margin: 30px 0; /* Espaçamento da barra */
+    border: 1px solid #ffffff; /* Borda branca sutil */
+    border-radius: 5px;
+}
+
+/* Estilos para o elemento <summary> (cabeçalho de cada item do acordeão) */
+.accordion summary {
+    display: flex; /* Permite alinhar itens lado a lado */
+    align-items: center; /* Alinha verticalmente os itens no centro */
+    padding: 15px 20px; /* Padding interno da summary */
+    cursor: pointer;
+    position: relative; /* Necessário para posicionar o ícone absolutamente */
+    background-color: #fdfdfd; /* Fundo claro para a summary */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background-color 0.3s ease; /* Transição suave no hover */
+}
+
+.accordion summary:hover {
+    background-color: #f0f0f0; /* Fundo um pouco mais escuro no hover */
+}
+
+/* Estilos para o estado aberto do acordeão (seta girando) */
+.accordion details[open] summary .icon {
+    transform: translateY(-50%) rotate(90deg); /* Gira 90 graus quando aberto */
+}
+
+/* Estilos para o título dentro da summary */
+.accordion summary h2 {
+    color: #FF6D00; /* Cor do título */
+    margin-left: 1.5rem; /* Espaçamento à esquerda do círculo */
+    flex-grow: 1; /* Permite que o título ocupe o espaço restante */
+    text-align: left; /* Garante que o texto se alinhe à esquerda */
+    font-size: 1.8rem; /* Tamanho da fonte para desktop */
+    font-weight: bold; /* Título em negrito */
+    line-height: 1.3; /* Espaçamento entre linhas */
+}
+
+/* Estilos para o conteúdo expandido do acordeão */
+.content {
+    margin: 15px 20px 20px 70px; /* Ajusta o padding para o conteúdo. Left margin alinha com o h2 */
+    padding-right: 20px; /* Padding à direita para não encostar na borda */
+    border-left: 2px solid #FF6D00; /* Linha laranja à esquerda do conteúdo */
+    padding-left: 20px; /* Espaçamento após a linha laranja */
+}
+
+.content ul li{
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Estilos dos parágrafos dentro do conteúdo */
+.accordion p {
+    text-align: left;
+    color: #000000;
+    padding: 10px 0; /* Espaçamento vertical para parágrafos */
+    font-size: 1.15rem; /* Tamanho da fonte do texto */
+    line-height: 1.6; /* Altura da linha para melhor legibilidade */
+}
+
+/* Estilos de lista (li) - se houver alguma */
+.accordion li {
+    color: #FF6D00;
+    margin-left: 50px;
+    padding: 5px 0;
+}
+
+/* Estilos para texto em negrito (strong) */
+.accordion strong {
+    color: #FF6D00;
+}
+
+/* Container do botão dentro do conteúdo */
+.content-button {
+    text-align: center; /* Centraliza o botão */
+    margin-top: 30px; /* Espaçamento acima do botão */
+    margin-bottom: 20px; /* Espaçamento abaixo do botão */
+}
+
+/* Estilos do Botão */
+.accordion .content-button button { /* Mais específico para evitar conflito com outros botões */
+    background-color: #FF6D00;
+    color: #ffffff;
+    padding: 15px 30px; /* Padding ajustado para um botão médio */
+    border-radius: 30px;
+    font-size: 1.1rem; /* Tamanho da fonte do botão */
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transições suaves */
+    white-space: nowrap; /* Evita que o texto quebre em várias linhas */
+}
+
+.accordion .content-button button:hover {
+    background-color: #e65c00; /* Cor um pouco mais escura no hover */
+    transform: translateY(-2px); /* Pequeno efeito de "levantar" */
+}
+
+/* Estilos para o ícone (seta) no final da summary */
+.accordion summary .icon {
+    position: absolute; /* Posição absoluta dentro da summary */
+    top: 50%; /* Alinha ao centro verticalmente */
+    right: 20px; /* Espaçamento à direita */
+    transform: translateY(-50%); /* Ajuste fino para centralizar verticalmente */
+    width: 40px; /* Largura do ícone */
+    height: 40px; /* Altura do ícone */
+    border-radius: 50%;
+    background-color: #FF6D00; /* Cor de fundo do círculo do ícone */
+    background-image: url('../img/main/section-accordion/seta.png'); /* Caminho da sua imagem */
+    background-size: 50%; /* Ajusta o tamanho da seta dentro do círculo */
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease; /* Transição para o giro */
+}
+
+/* Estilos para o círculo numerado */
+.circle {
+    width: 45px; /* Tamanho do círculo */
+    height: 45px;
+    border-radius: 50%;
+    background-color: #FF6D00; /* Cor de fundo do círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Cor do número */
+    font-size: 1.3rem; /* Tamanho da fonte do número */
+    font-weight: bold;
+    flex-shrink: 0; /* Garante que o círculo não diminua em telas pequenas */
+}
+
+
+/* -------------------- Media Queries para Responsividade -------------------- */
+
+/* Para tablets e laptops pequenos (769px a 1024px) */
+@media (max-width: 1024px) {
+    .accordion {
+        width: 90%; /* Ocupa mais largura em telas menores */
+        padding: 0 15px;
+    }
+
+    .accordion summary {
+        padding: 12px 18px; /* Reduz padding da summary */
+    }
+
+    .accordion summary h2 {
+        font-size: 1.6rem; /* Reduz o tamanho da fonte do título */
+        margin-left: 1.2rem;
+    }
+
+    .circle {
+        width: 40px; /* Reduz o tamanho do círculo */
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .accordion summary .icon {
+        width: 35px; /* Reduz o tamanho do ícone */
+        height: 35px;
+        right: 15px;
+    }
+
+    .content {
+        margin: 10px 15px 15px 60px; /* Ajusta margens do conteúdo */
+        padding-left: 15px;
+    }
+
+    .accordion p {
+        font-size: 1.05rem; /* Reduz o tamanho da fonte do parágrafo */
+    }
+
+    .accordion .content-button button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    .icon{
+      margin-top: 2.6rem;
+      margin-right: -0.3rem;
+    }
+}
+
+/* Para celulares e tablets pequenos (481px a 768px) */
+@media (max-width: 768px) {
+    .accordion {
+        width: 95%; /* Ocupa quase toda a largura da tela */
+        padding: 0 10px;
+        margin: 30px auto; /* Menos margem vertical */
+    }
+
+    .barra-cinza {
+        margin: 20px 0; /* Menos margem para a barra */
+    }
+
+    .accordion summary {
+        padding: 10px 15px; /* Reduz ainda mais o padding */
+    }
+
+    .accordion summary h2 {
+        font-size: 1.3rem; /* Título menor para se ajustar */
+        margin-left: 1rem;
+    }
+
+    .circle {
+        width: 35px; /* Círculo menor */
+        height: 35px;
+        font-size: 1.1rem;
+    }
+
+    .accordion summary .icon {
+        width: 30px; /* Ícone menor */
+        height: 30px;
+        right: 10px;
+        background-size: 60%; /* Seta um pouco maior dentro do círculo */
+    }
+
+    .content {
+        margin: 10px 10px 10px 50px; /* Margens ajustadas para telas menores */
+        padding-left: 10px;
+    }
+
+    .accordion p {
+        font-size: 0.95rem; /* Parágrafo menor para se ajustar */
+        padding: 5px 0;
+    }
+
+    .accordion .content-button button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .icon{
+      margin-top: 2.6rem;
+      margin-right: -0.3rem;
+    }
+}
+
+/* Para celulares muito pequenos (até 480px) */
+@media (max-width: 480px) {
+    .accordion {
+        padding: 0 5px; /* Padding mínimo */
+    }
+
+    .accordion summary {
+        flex-wrap: wrap; /* Permite que o título quebre linha abaixo do círculo */
+        justify-content: center; /* Centraliza itens se houver quebra */
+        padding: 10px; /* Padding ainda menor */
+    }
+
+    .accordion summary h2 {
+        font-size: 1.1rem; /* Título ainda menor */
+        margin-left: 0; /* Remove margem à esquerda se quebrar linha */
+        text-align: center; /* Centraliza o texto se quebrar */
+        width: 100%; /* Ocupa a largura total disponível */
+        margin-top: 5px; /* Espaço entre círculo e título se quebrar */
+    }
+
+    .circle {
+        width: 30px; /* Círculo bem pequeno */
+        height: 30px;
+        font-size: 1rem;
+    }
+
+    .accordion summary .icon {
+        width: 25px; /* Ícone bem pequeno */
+        height: 25px;
+        right: 8px;
+        background-size: 70%;
+    }
+
+    .content {
+        margin: 5px 5px 5px 30px; /* Margens mínimas */
+        padding-left: 8px;
+    }
+
+    .accordion p {
+        font-size: 0.85rem; /* Texto do parágrafo bem pequeno */
+        padding: 3px 0;
+    }
+
+    .accordion .content-button button {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+}
+/* ----------------- Section Accordion ------------------------- */
+
+/* -----------------Section Carousel--------------------*/
+
+/* Estilos Gerais para o container */
+.carousel-container {
+    text-align: center;
+    max-width: 1040px; /* Largura máxima para desktops */
+    margin: 0 auto; /* Centraliza o container na página */
+    padding: 60px 20px; /* Padding superior/inferior e lateral */
+    box-sizing: border-box; /* Inclui padding na largura total */
+}
+
+.carousel-container h2 {
+    color: #FF6D00;
+    padding-bottom: 2.5rem; /* Espaçamento abaixo do título */
+    font-size: 2.6rem; /* Tamanho da fonte do título */
+    margin-top: 0; /* Remove margem superior padrão do h2 */
+    font-weight: bold; /* Título em negrito */
+}
+
+/* Estilos do Carrossel (flex container para os cards) */
+.carousel {
+    display: flex;
+    /* overflow-x: hidden; <-- Removido para permitir rolagem em telas menores */
+    /* scroll-snap-type: x mandatory; <-- Ativado em media query para mobile */
+    gap: 4rem; /* Espaçamento entre os cards */
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    align-items: stretch; /* Garante que todos os cards tenham a mesma altura */
+    padding-bottom: 20px; /* Espaço para o scrollbar em mobile, se aparecer */
+}
+
+/* Estilos dos Cards Individuais */
+.card {
+    flex: 0 0 calc(33.33% - 20px); /* Para 3 cards com 30px de gap */
+    padding: 30px 25px 40px; /* Padding interno do card: top, right/left, bottom */
+    background-color: #FF6D00; /* Cor de fundo laranja */
+    border-radius: 20px; /* Bordas arredondadas */
+    display: flex; /* Transforma o card em um container flex */
+    flex-direction: column; /* Organiza os itens internos em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente dentro do card */
+    text-align: center; /* Centraliza o texto */
+    min-width: 280px; /* Largura mínima para cards antes da responsividade */
+    box-sizing: border-box; /* Inclui padding e borda na largura do card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sutil sombra */
+}
+
+.card img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do card */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 15px; /* Bordas arredondadas para a imagem */
+    margin-bottom: 20px; /* Espaço abaixo da imagem */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+}
+
+.card h3 {
+    color: white;
+    font-size: 1.6rem; /* Tamanho da fonte do título do card */
+    margin: 10px 0 10px; /* Espaçamento para o título */
+    line-height: 1;
+    font-weight: bold;
+}
+
+.card p {
+    color: white;
+    font-size: 0.98rem; /* Tamanho da fonte do parágrafo */
+    margin: 0 0 25px; /* Espaçamento para o parágrafo */
+    line-height: 1.5;
+    flex-grow: 1; /* Faz o parágrafo ocupar o máximo de espaço, empurrando o botão para baixo */
+}
+
+/* Estilos dos ícones (dentro do card) */
+.icon-card {
+    display: block; /* Para que margin: auto funcione */
+    width: 100px; /* Tamanho do ícone */
+    height: 100px; /* Tamanho do ícone */
+    background-size: contain; /* Ajusta o ícone para caber sem cortar */
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 25px auto 35px; /* Centraliza e adiciona margens */
+}
+
+/* Estilos dos Botões */
+.card button {
+    background-color: #ffffff; /* Cor de fundo para botões "não selecionados" */
+    color: #FF6D00; /* Cor do texto do botão */
+    border: none; /* Remove a borda */
+    padding: 1.1rem 4rem; /* Padding interno do botão */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-weight: bold; /* Texto em negrito */
+    text-transform: uppercase; /* Texto em maiúsculas */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave */
+    margin-top: auto; /* Garante que o botão fique no final do card flex */
+    white-space: nowrap; /* Evita que o texto do botão quebre */
+}
+
+.card button:hover {
+    background-color: #2AB0BF; /* Escurece um pouco no hover */
+    color: white;
+}
+
+
+
+/* -------------------- Responsividade -------------------- */
+
+/* Para telas de tablet e laptops menores (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .carousel-container {
+        max-width: 90%;
+        padding: 40px 15px;
+    }
+
+    .carousel {
+        flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha */
+        justify-content: center; /* Centraliza os cards na linha */
+        gap: 25px; /* Ajusta o espaçamento */
+    }
+
+    .card {
+        flex: 0 0 calc(50% - 12.5px); /* 2 cards por linha com gap de 25px */
+        padding: 25px 20px 30px;
+    }
+
+    .carousel-container h2 {
+        font-size: 2.2rem;
+    }
+
+    .card h3 {
+        font-size: 1.4rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    .icon-card {
+        width: 60px;
+        height: 60px;
+        margin: 20px auto 30px;
+    }
+
+    .card button {
+        padding: 1rem 3rem;
+    }
+}
+
+/* Para telas de celular (max-width: 768px) */
+@media (max-width: 768px) {
+    .carousel-container {
+        padding: 30px 10px;
+    }
+
+    .carousel {
+        flex-wrap: nowrap; /* Não quebra, força a rolagem horizontal */
+        overflow-x: auto; /* Permite a rolagem horizontal */
+        scroll-snap-type: x mandatory; /* Para a rolagem "encaixar" nos cards */
+        -webkit-overflow-scrolling: touch; /* Melhoria de rolagem para iOS */
+        justify-content: flex-start; /* Alinha os cards ao início para a rolagem */
+        padding-bottom: 20px; /* Espaço para a barra de rolagem */
+    }
+
+    .card {
+        flex: 0 0 85%; /* Mostra um card quase inteiro, com um pouco do próximo */
+        max-width: 450px; /* Limita a largura máxima do card */
+        margin-right: 20px; /* Espaçamento entre os cards no carrossel */
+        scroll-snap-align: start; /* Alinha o card no início da área de visualização */
+        padding: 25px 20px 30px; /* Padding ajustado para telas menores */
+    }
+
+    .card:last-child {
+        margin-right: 0; /* Remove a margem extra do último card */
+    }
+
+    .carousel-container h2 {
+        font-size: 1.9rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .card h3 {
+        font-size: 1.25rem;
+    }
+
+    .card p {
+        font-size: 0.85rem;
+    }
+
+    .icon-card {
+        width: 50px;
+        height: 50px;
+        margin: 15px auto 25px;
+    }
+
+}
+
+/* Para celulares muito pequenos (max-width: 480px) */
+@media (max-width: 480px) {
+    .carousel-container {
+        padding: 20px 5px;
+    }
+
+    .carousel-container h2 {
+        font-size: 1.6rem;
+    }
+
+    .card {
+        flex: 0 0 95%; /* Quase a largura total da tela */
+        margin-right: 15px; /* Espaçamento menor */
+        padding: 20px 15px 25px;
+    }
+}
+
+/* -------------------------------- Main ------------------------------- */
+
+/* -------------------------------- Footer------------------------------- */
+
+/* Estilos para o botão "Voltar ao topo" */
+.back-to-top-button {
+    margin-top: 40px; /* Espaço acima do botão */
+    /* REMOVA A LINHA ABAIXO se quiser que ele apareça o tempo todo */
+    /* display: none; */ 
+}
+
+.back-to-top-button a {
+    display: flex; /* Para alinhar a imagem e o texto */
+    align-items: center;
+    text-decoration: none;
+    color: #FF6D00; /* Cor do texto do botão */
+    font-weight: bold;
+}
+
+.back-to-top-button img {
+    width: 30px; /* Tamanho da imagem da seta */
+    height: 30px;
+    margin-right: 10px; /* Espaço entre a seta e o texto */
+    background-color: #FF6D00; /* Cor de fundo para a seta */
+    border-radius: 5px; /* Bordas arredondadas para a seta */
+    padding: 5px; /* Espaçamento interno da seta */
+}
+
+.back-to-top-button a:hover {
+    opacity: 0.8; /* Efeito de hover */
+}
+
+/* O restante do seu CSS para responsividade, boxes, etc., permanece o mesmo: */
+
+/* Estilo para o footer geral */
+footer {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    
+}
+
+.linha-laranja-topo {
+    width: 100%;
+    height: 20px;
+    background-color: #FF6D00;
+    
+}
+
+.boxes-container {
+    display: flex;
+    padding: 40px 140px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.box {
+    flex: 1;
+    background: transparent;
+    text-align: left;
+    padding: 4px;
+    min-width: 220px;
+    margin-bottom: 20px;
+}
+
+.box h2, .box h3 {
+    color: #FF6D00;
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.box p {
+    margin: 0;
+    padding-top: 5px;
+    color: #7D7D7D;
+    font-size: 0.75rem;
+}
+
+.social-icons {
+    display: flex;
+    border-radius: 10px;
+    justify-content: left;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+.social-icon {
+    margin-right: 10px;
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.email-box {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 10px;
+}
+
+input[type="email"] {
+    padding: 0.5rem;
+    border: 2px solid #FF6D00;
+    border-radius: 5px 0 0 5px;
+    width: 70%;
+    font-size: 0.75rem;
+    background-color: #333;
+    color: #FF6D00;
+}
+
+button.enviar-button {
+    background-color: #FF6D00;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    padding: 10px 20px;
+    font-size: 0.70rem;
+    cursor: pointer;
+}
+
+button.enviar-button:hover {
+    background-color: #994300;
+}
+
+input[type="email"]:focus {
+    border: 2px solid #FF6D00;
+    outline: none;
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 80px;
+    right: 23px;
+    z-index: 9999;
+}
+
+.whatsapp-button img {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.whatsapp-button img:hover {
+    background-color: #25d366;
+}
+
+.direitos-autorais {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #FF6D00;
+    color: #fff;
+    font-size: 0.90rem;
+}
+
+.direitos-autorais p {
+    color: #fff;
+}
+
+/* ================== Media Queries para Responsividade ================== */
+
+@media (max-width: 1200px) {
+    .boxes-container {
+        padding: 30px 50px;
+    }
+}
+
+@media (max-width: 992px) {
+    .boxes-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+    }
+
+    .box {
+        text-align: center;
+        margin-bottom: 30px;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .social-icons, .email-box {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .boxes-container {
+        padding: 20px 15px;
+    }
+
+    .box {
+        margin-bottom: 25px;
+    }
+
+    .box h2, .box h3 {
+        font-size: 20px;
+    }
+
+    .box p {
+        font-size: 14px;
+    }
+
+    input[type="email"], button.enviar-button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .social-icons img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .whatsapp-button {
+        bottom: 20px;
+        right: 15px;
+    }
+
+    .whatsapp-button img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        margin-bottom: 20px;
+    }
+
+    input[type="email"] {
+        width: 60%;
+    }
+
+    button.enviar-button {
+        width: 40%;
+    }
+
+    .back-to-top-button{
+      margin: 10px 100px;
+    }
+    
+
+    .back-to-top-button a {
+        font-size: 14px;
+    }
+
+    .back-to-top-button img {
+        width: 25px;
+        height: 25px;
+    }
+}
+/* -------------------------------- Footer ------------------------------- */

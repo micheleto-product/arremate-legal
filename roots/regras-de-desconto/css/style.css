@@ -1,0 +1,800 @@
+/* Estilos globais para facilitar a customização */
+:root {
+    --cor-primaria: #FF6D00; /* Azul padrão - Troque pela sua cor principal */
+    --cor-secundaria: #30AFBF; /* Cinza padrão - Troque pela sua cor secundária */
+    --cor-texto-principal: #FF6D00; /* Preto padrão - Troque pela cor do texto principal */
+    --cor-texto-secundario: #ffffff; /* Cinza claro padrão - Troque pela cor do texto secundário */
+    --cor-fundo: #f8f9fa; /* Branco acinzentado padrão - Troque pela cor de fundo */
+    --cor-fundo-secao: #000000; /* Branco padrão para seções - Troque se necessário */
+    --fonte-principal: sans-serif; /* Fonte padrão - Troque pela sua fonte */
+}
+
+        /* ----------------- Head ------------------------- */
+header {
+  background-color: #FF6D00;
+  color: #fff;
+  padding: 15px 0;
+  position: fixed;
+  z-index: 9999; /* Garante que a barra fique acima de outros elementos */
+  top: 0; /* Posiciona o topo do header na parte superior da tela */
+  left: 0; /* Posiciona o lado esquerdo do header na borda esquerda da tela */
+  width: 100%; /* Faz o header ocupar 100% da largura da tela */
+}
+
+.menu{
+  margin: 0;
+  font-family: Arial, sans-serif;
+  max-width: 80%; /* Permite que o conteúdo ocupe no máximo 80% da largura da tela */
+  margin: 0 auto; /* Centraliza o container e adiciona margens automáticas */
+}
+  
+  .menu-icon {
+    cursor: pointer;
+    font-size: 17px;
+    padding-left: 41.5%;
+    padding-top: 0.65%;
+  }
+  
+  .menu-logo {
+    width: auto; /* Remove a largura fixa */
+    max-height: 40px; /* Define uma altura máxima para evitar distorção */
+  }
+  
+  .menu-pag{
+    margin-top: 0.9%;
+  }
+
+  .academy{
+  background-color: transparent; /* Torna o fundo transparente */
+  border: 3px solid white; /* Adiciona uma borda branca de 2px */
+  border-radius: 4px; /* Arredonda as bordas */
+  padding: 10px 10px 10px 10px;
+  }
+  
+  
+  .menu-imagem {
+    margin-left: 40px;
+    width: 40px;
+    max-height: auto;
+  }
+
+  .progress-container {
+    position: fixed;
+    top: 74px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    z-index: 9999; /* Garante que a barra fique acima de outros elementos */
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background: #ffffff; /* Cor da barra de progresso */
+    transition: width 0.6 s ease-in-out; /* Adiciona uma transição suave */
+    border-radius: 0px 40px 40px 0px;
+  }
+  
+  
+  
+  .sub-menu {
+    display: none;
+    background-color: rgba(165, 80, 0, 0.4); /* Altere a opacidade ajustando o último valor (0.9) */
+    padding: 30px;
+    min-width: 10px;
+    margin-left: 216px;
+    color: #041553;
+  }
+  
+  
+  
+  .expandable1 > a:after {
+    content: " ▼";
+    display: inline-flex; /* Mudamos para inline-flex */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    margin-left: 2.1rem;
+  }
+
+  
+  .expandable2 > a:after {
+    content: " ▼";
+    display: inline-flex; /* Mudamos para inline-flex */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    margin-left: 1.4rem;
+  }
+  
+  
+  .expandable3 > a:after {
+    content: " ▼";
+    display: inline;
+    margin-left: 4.8rem;
+  }
+
+  .expandable4 > a:after {
+    content: " ▼";
+    display: inline;
+    margin-left: 22.4rem;
+  }
+
+  .expandable5 > a:after {
+    content: " ▼";
+    display: inline;
+    margin-left: 20.4rem;
+  }
+
+  
+  
+  
+  .produtos{
+    padding-left: 10px;
+    padding-bottom: 20px;
+  }
+  
+  .sub-menu-produtos h2 {
+    color: white;
+  }
+  
+  
+  .sidebar {
+    width: 0;
+    height: 100%;
+    position: fixed; /* Importante para o z-index funcionar */
+    z-index: 9999; /* Defina um valor menor para ficar em segundo plano */
+    top: 0;
+    left: 0;
+    background-color: #bd5200;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    color: white;
+  }
+  
+  .sidebar a{
+    color: white;
+    text-decoration: none;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding-left: 50px;
+  }
+  
+  .sidebar li {
+    padding: 10px;
+  }
+  
+  .content {
+    margin-left: 33.33%;
+    /* Rest of your content styles */
+  }
+  
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul li {
+    margin: 0 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+/* ----------------- Head ------------------------- */
+/* ----------------- Main ------------------------- */
+
+ /* Estilos globais do corpo */
+body {
+    font-family: var(--fonte-principal);
+    color: var(--cor-texto-principal);
+    background-color: var(--cor-fundo);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container img{
+    max-width: 20%;
+    max-height: auto;
+    padding: 3em 0em;
+}
+
+section {
+    background-color: var(--cor-fundo-secao);
+    padding: 10px 0;
+    text-align: center;
+}
+
+h1, h2, h3, p {
+    color: var(--cor-texto-principal);
+}
+
+/* Seção Hero */
+#hero {
+    background-image: url('../img/Main/Gemini_Generated_Image_rmh5c4rmh5c4rmh5.png'); /* VERIFIQUE ESTE CAMINHO! */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Garante que a imagem não se repita */
+    color: var(--cor-fundo-secao); /* Esta variável pode estar definindo uma cor transparente ou similar */
+    padding: 30px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    /* Remover display: flex, flex-direction, align-items do #hero
+       pois podem estar interferindo no background e no alinhamento.
+       Vamos controlar o espaçamento com margens. */
+}
+
+#hero .container {
+    /* Pode ser necessário ajustar a largura máxima do container se ele estiver muito apertado */
+    max-width: 960px; /* Exemplo, ajuste conforme seu design geral */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 0 15px; /* Adiciona um padding lateral para evitar que o conteúdo cole nas bordas */
+}
+
+#hero .hero-logo {
+    margin-bottom: -20px; /* MARGEM NEGATIVA para puxar o h1 para cima, ajuste este valor */
+    max-width: 250px; /* Define um tamanho padrão razoável para desktop */
+    height: auto; /* Mantém a proporção */
+    display: block; /* Garante que a margem negativa funcione corretamente */
+    margin-left: auto; /* Centraliza a imagem */
+    margin-right: auto; /* Centraliza a imagem */
+}
+
+#hero h1 {
+    font-size: 3em; /* Voltei ao tamanho original, mas pode ajustar se preferir */
+    margin-top: 0; /* Garante que não há margem superior extra puxando para baixo */
+    margin-bottom: 10px; /* Pequena margem abaixo do título */
+    color: var(--cor-texto-principal);
+    position: relative;
+    z-index: 1;
+    line-height: 1.2;
+}
+
+#hero p {
+    font-size: 1.5em; /* Voltei ao tamanho original, mas pode ajustar se preferir */
+    margin-bottom: 30px;
+    color: var(--cor-texto-secundario);
+    position: relative;
+    z-index: 1;
+}
+
+/* Seção de informação sobre os descontos */
+.discount-info {
+    background-color: var(--cor-texto-principal); /* Cor laranja para o box */
+    color: white;
+    padding: 10px 60px; /* Voltei ao padding original que você tinha */
+    border-radius: 15px;
+    margin: 0 auto 30px auto;
+    width: fit-content;
+    font-size: 1.0em;
+    font-weight: 600;
+}
+
+/* Opcional: Para espaçar os parágrafos dentro do box de desconto */
+.discount-info p {
+    margin-bottom: 10px;
+}
+
+.discount-info p:last-child {
+    margin-bottom: 0;
+}
+
+/* Media query para dispositivos móveis (largura máxima de 768px) */
+@media (max-width: 768px) {
+    #hero .hero-logo {
+        width: 200px; /* Aumentei mais o tamanho no mobile para garantir visibilidade */
+        margin-bottom: -10px; /* Ajuste a margem negativa para mobile, pode precisar de menos ou mais */
+    }
+
+    #hero h1 {
+        font-size: 2.2em; /* Ajuste o tamanho da fonte para mobile */
+    }
+
+    #hero p {
+        font-size: 1.2em; /* Ajuste o tamanho da fonte para mobile */
+    }
+
+    .discount-info {
+        padding: 10px 30px; /* Ajuste o padding do box de desconto para mobile */
+        font-size: 0.9em; /* Ajuste o tamanho da fonte do box de desconto para mobile */
+    }
+}
+
+
+
+/* Seção Rules */
+#rules {
+    background-color: black; /* Fundo preto para a seção, como na imagem */
+    padding: 60px 0;
+    color: white; /* Cor do texto geral branco */
+    text-align: center;
+}
+
+#rules h2 {
+    font-size: 2.5em;
+    margin-bottom: 50px; /* Mais espaço abaixo do título */
+    color: white;
+}
+
+.rules-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Para empilhar os cards verticalmente */
+    flex-direction: column; /* Coloca os itens um abaixo do outro */
+    gap: 20px; /* Espaço entre os cards */
+    max-width: 900px; /* Limita a largura dos cards */
+    margin: 0 auto; /* Centraliza a lista */
+}
+
+.rule-item {
+    background-color: #925629; /* Cor de fundo escura para os cards, próximo ao marrom escuro da imagem */
+    border-radius: 10px; /* Bordas arredondadas para os cards */
+    padding: 20px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sutil sombra para destacar */
+}
+
+.rule-content {
+    display: grid;
+    /* Define 3 colunas: uma para a regra (fixa), uma para a descrição (flexível), uma para o extra (fixa) */
+    grid-template-columns: 180px 1fr 180px; /* Ajuste as larguras conforme necessário */
+    gap: 30px; /* Espaçamento entre as colunas */
+    align-items: center; /* Alinha o conteúdo verticalmente no centro */
+    text-align: left; /* Alinha o texto das colunas à esquerda */
+}
+
+.rule-number {
+    text-align: left; /* Garante que o texto da regra fique alinhado à esquerda */
+    color: #fff; /* Cor laranja para o número da regra */
+    font-size: 1.3em;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.rule-number p {
+    margin-top: 5px; /* Espaço entre "Regra X" e o título da regra */
+    font-size: 0.9em; /* Tamanho da fonte para o título da regra */
+    font-weight: normal; /* Garante que não seja negrito */
+    color: white; /* Cor branca para o texto da descrição da regra */
+}
+
+
+.rule-description {
+    color: white; /* Cor branca para o texto da descrição */
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.rule-description p {
+    margin: 0; /* Remove margem padrão de parágrafo */
+    color: #fff;
+}
+
+.rule-extra {
+    text-align: right; /* Alinha o conteúdo extra à direita */
+    /* Estilos específicos para os links e botões */
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column; /* Links um abaixo do outro */
+    gap: 5px;
+    align-items: flex-end; /* Alinha os links à direita */
+}
+
+.social-links a,
+.publicacao-link a {
+    background-color: #FF6D00; /* Cor de fundo laranja para os links/botões */
+    color: rgb(255, 255, 255); /* Cor do texto preta */
+    padding: 8px 15px;
+    border-radius: 5px; /* Bordas arredondadas */
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Para que o padding funcione */
+}
+
+.social-links a:hover,
+.publicacao-link a:hover {
+    background-color: #cc6600; /* Laranja mais escuro ao passar o mouse */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .rule-content {
+        grid-template-columns: 1fr; /* Em telas menores, as colunas viram linhas */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .rule-number,
+    .rule-description,
+    .rule-extra {
+        text-align: center; /* Centraliza tudo */
+    }
+
+    .social-links,
+    .publicacao-link {
+        align-items: center; /* Centraliza os links */
+    }
+
+    .social-links a,
+    .publicacao-link a {
+        width: 100%; /* Links ocupam toda a largura */
+        box-sizing: border-box; /* Inclui padding na largura */
+        margin-top: 10px; /* Espaço entre os links */
+    }
+}
+
+
+ /* Seção Forms */
+#forms {
+    background-color: black; /* Fundo preto para toda a seção, como na imagem */
+    padding: 60px 0; /* Ajuste o padding conforme necessário */
+    text-align: center; /* Centraliza o conteúdo, incluindo o box do formulário */
+}
+
+#forms .container {
+    max-width: 600px; /* Limita a largura do container para o formulário */
+    margin: 0 auto; /* Centraliza o container */
+}
+
+#forms .form-section {
+    background-color: #1a1a1a; /* Fundo mais escuro para o box do formulário */
+    border: 1px solid #333; /* Borda sutil */
+    border-radius: 15px; /* Bordas arredondadas, como na imagem */
+    padding: 40px; /* Padding interno maior */
+    text-align: left; /* Alinha o texto dentro do formulário à esquerda */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+}
+
+#forms .form-section h3 {
+    color: var(--cor-texto-principal); /* Cor laranja para o título do formulário */
+    font-size: 1.8em;
+    margin-bottom: 30px; /* Espaço abaixo do título */
+    text-align: left; /* Garante alinhamento à esquerda */
+}
+
+#forms .form-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: white; /* Cor branca para as labels */
+    font-size: 1.1em; /* Tamanho da fonte para as labels */
+}
+
+#forms .form-section input::placeholder {
+    color: #bbb; /* Cor mais clara para o placeholder */
+    opacity: 0.8; /* Transparência para o placeholder */
+}
+
+#forms .form-section input,
+#forms .form-section select {
+    width: 100%; /* Ocupa 100% da largura do pai */
+    padding: 12px; /* Padding maior */
+    margin-bottom: 25px; /* Mais espaço entre os campos */
+    background-color: black; /* Fundo preto para os campos */
+    color: white; /* Cor do texto dentro do campo branca */
+    border: 1px solid white; /* Borda branca para os campos */
+    border-radius: 5px; /* Bordas levemente arredondadas para os campos */
+    font-size: 1em;
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura */
+}
+
+/* Estilo específico para a nota de formato do WhatsApp */
+#forms .form-section .whatsapp-note {
+    display: block; /* Garante que ocupe sua própria linha */
+    font-size: 0.85em; /* Tamanho menor */
+    color: #999; /* Cor cinza para a nota */
+    margin-top: -20px; /* Ajusta a margem para ficar mais perto do input */
+    margin-bottom: 25px; /* Mantém o espaçamento para o próximo campo */
+}
+
+
+/* Estilo para as setas do select DENTRO do form-section */
+#forms .form-section select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%20197.8L147.2%2058%207.4%20197.8c-9.7%209.7-25.3%209.7-35%200-9.7-9.7-9.7-25.3%200-35L129.8%205.8c9.7-9.7%2025.3-9.7%2035%200l157.2%20157.2c9.7%209.7%209.7%2025.3%200%2035s-25.3%209.7-35%200z%22%2F%3E%3C%2Fsvg%3E'); /* Seta branca personalizada */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px; /* Tamanho da seta */
+    padding-right: 30px; /* Para não cobrir a seta */
+}
+
+#forms .form-section button {
+    background-color: var(--cor-texto-principal); /* Cor de fundo laranja para o botão */
+    color: black; /* Cor do texto preta para o botão */
+    padding: 15px 30px; /* Padding maior para o botão */
+    border: none;
+    border-radius: 8px; /* Bordas mais arredondadas para o botão */
+    font-size: 1.2em; /* Tamanho da fonte maior para o botão */
+    font-weight: bold; /* Negrito para o botão */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Botão ocupa 100% da largura */
+    margin-top: 20px; /* Espaço acima do botão */
+}
+
+#forms .form-section button:hover {
+    background-color: #cc6600; /* Laranja mais escuro ao passar o mouse */
+}
+
+/* Mensagem de sucesso do formulário */
+#forms .success-message {
+    color: #4CAF50; /* Verde para mensagem de sucesso */
+    margin-top: 20px;
+    font-weight: 600;
+    display: none; /* Escondido por padrão, será exibido via JS */
+    text-align: center; /* Centraliza a mensagem de sucesso */
+}
+
+/* Nota de rodapé DENTRO da seção de formulários */
+#forms .footer-note {
+    margin-top: 40px; /* Mais espaço acima da nota de rodapé */
+    font-size: 0.95em; /* Tamanho da fonte ligeiramente maior */
+    color: #999; /* Cor mais clara para a nota de rodapé */
+    line-height: 1.5;
+    text-align: center; /* Centraliza a nota de rodapé */
+}
+
+
+/* -------------------------------- Footer ------------------------------- */
+
+/* Estilos para o botão "Voltar ao topo" */
+.back-to-top-button {
+    margin-top: 40px; /* Espaço acima do botão */
+    /* REMOVA A LINHA ABAIXO se quiser que ele apareça o tempo todo */
+    /* display: none; */ 
+}
+
+.back-to-top-button a {
+    display: flex; /* Para alinhar a imagem e o texto */
+    align-items: center;
+    text-decoration: none;
+    color: #FF6D00; /* Cor do texto do botão */
+    font-weight: bold;
+}
+
+.back-to-top-button img {
+    width: 30px; /* Tamanho da imagem da seta */
+    height: 30px;
+    margin-right: 10px; /* Espaço entre a seta e o texto */
+    background-color: #FF6D00; /* Cor de fundo para a seta */
+    border-radius: 5px; /* Bordas arredondadas para a seta */
+    padding: 5px; /* Espaçamento interno da seta */
+}
+
+.back-to-top-button a:hover {
+    opacity: 0.8; /* Efeito de hover */
+}
+
+/* O restante do seu CSS para responsividade, boxes, etc., permanece o mesmo: */
+
+/* Estilo para o footer geral */
+footer {
+    background-color: #000;
+    color: #fff;
+}
+
+.linha-laranja-topo {
+    width: 100%;
+    height: 20px;
+    background-color: #FF6D00;
+}
+
+.boxes-container {
+    display: flex;
+    padding: 40px 180px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.box {
+    flex: 1;
+    background: transparent;
+    text-align: left;
+    padding: 4px;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.box h2, .box h3 {
+    color: #FF6D00;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.box p {
+    margin: 0;
+    padding-top: 5px;
+    color: #7D7D7D;
+}
+
+.social-icons {
+    display: flex;
+    border-radius: 10px;
+    justify-content: left;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+.social-icon {
+    margin-right: 10px;
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.email-box {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 10px;
+}
+
+input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    width: 70%;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+}
+
+button.enviar-button {
+    background-color: #FF6D00;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button.enviar-button:hover {
+    background-color: #994300;
+}
+
+input[type="email"]:focus {
+    border: 2px solid #ffffff;
+    outline: none;
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 80px;
+    right: 23px;
+    z-index: 9999;
+}
+
+.whatsapp-button img {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.whatsapp-button img:hover {
+    background-color: #25d366;
+}
+
+.direitos-autorais {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #FF6D00;
+    color: #fff;
+    font-size: 14px;
+}
+
+.direitos-autorais p {
+    color: #fff;
+}
+
+/* ================== Media Queries para Responsividade ================== */
+
+@media (max-width: 1200px) {
+    .boxes-container {
+        padding: 30px 50px;
+    }
+}
+
+@media (max-width: 992px) {
+    .boxes-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+    }
+
+    .box {
+        text-align: center;
+        margin-bottom: 30px;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .social-icons, .email-box {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .boxes-container {
+        padding: 20px 15px;
+    }
+
+    .box {
+        margin-bottom: 25px;
+    }
+
+    .box h2, .box h3 {
+        font-size: 20px;
+    }
+
+    .box p {
+        font-size: 14px;
+    }
+
+    input[type="email"], button.enviar-button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .social-icon img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .whatsapp-button {
+        bottom: 20px;
+        right: 15px;
+    }
+
+    .whatsapp-button img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        margin-bottom: 20px;
+    }
+
+    input[type="email"] {
+        width: 60%;
+    }
+
+    button.enviar-button {
+        width: 40%;
+    }
+
+    .back-to-top-button{
+      margin: 10px 100px;
+    }
+    
+
+    .back-to-top-button a {
+        font-size: 14px;
+    }
+
+    .back-to-top-button img {
+        width: 25px;
+        height: 25px;
+    }
+}
+/* -------------------------------- Footer ------------------------------- */

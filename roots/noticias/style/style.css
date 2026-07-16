@@ -1,0 +1,932 @@
+/* Estilos globais para facilitar a customização */
+:root {
+    --cor-primaria: #FF6D00; /* Azul padrão - Troque pela sua cor principal */
+    --cor-secundaria: #30AFBF; /* Cinza padrão - Troque pela sua cor secundária */
+    --cor-texto-principal: #FF6D00; /* Preto padrão - Troque pela cor do texto principal */
+    --cor-texto-secundario: #ffffff; /* Cinza claro padrão - Troque pela cor do texto secundário */
+    --cor-fundo: #f8f9fa; /* Branco acinzentado padrão - Troque pela cor de fundo */
+    --cor-fundo-secao: #000000; /* Branco padrão para seções - Troque se necessário */
+    --fonte-principal: sans-serif; /* Fonte padrão - Troque pela sua fonte */
+}
+
+        /* ----------------- Head ------------------------- */
+header {
+  background-color: #FF6D00;
+  color: #fff;
+  padding: 15px 0;
+  position: fixed;
+  z-index: 9999; /* Garante que a barra fique acima de outros elementos */
+  top: 0; /* Posiciona o topo do header na parte superior da tela */
+  left: 0; /* Posiciona o lado esquerdo do header na borda esquerda da tela */
+  width: 100%; /* Faz o header ocupar 100% da largura da tela */
+}
+
+.menu{
+  margin: 0;
+  font-family: Arial, sans-serif;
+  max-width: 80%; /* Permite que o conteúdo ocupe no máximo 80% da largura da tela */
+  margin: 0 auto; /* Centraliza o container e adiciona margens automáticas */
+}
+  
+  .menu-icon {
+    cursor: pointer;
+    font-size: 17px;
+    padding-left: 41.5%;
+    padding-top: 0.65%;
+  }
+  
+  .menu-logo {
+    width: auto; /* Remove a largura fixa */
+    max-height: 40px; /* Define uma altura máxima para evitar distorção */
+  }
+  
+  .menu-pag{
+    margin-top: 0.9%;
+  }
+
+  .academy{
+  background-color: transparent; /* Torna o fundo transparente */
+  border: 3px solid white; /* Adiciona uma borda branca de 2px */
+  border-radius: 4px; /* Arredonda as bordas */
+  padding: 10px 10px 10px 10px;
+  }
+  
+  
+  .menu-imagem {
+    margin-left: 40px;
+    width: 40px;
+    max-height: auto;
+  }
+
+  .progress-container {
+    position: fixed;
+    top: 74px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    z-index: 9999; /* Garante que a barra fique acima de outros elementos */
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background: #ffffff; /* Cor da barra de progresso */
+    transition: width 0.6 s ease-in-out; /* Adiciona uma transição suave */
+    border-radius: 0px 40px 40px 0px;
+  }
+  
+  
+  
+  .sub-menu {
+    display: none;
+    background-color: rgba(165, 80, 0, 0.4); /* Altere a opacidade ajustando o último valor (0.9) */
+    padding: 30px;
+    min-width: 10px;
+    margin-left: 216px;
+    color: #041553;
+  }
+  
+  
+  
+  .expandable1 > a:after {
+    content: " ▼";
+    display: inline-flex; /* Mudamos para inline-flex */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    margin-left: 2.1rem;
+  }
+
+  
+  .expandable2 > a:after {
+    content: " ▼";
+    display: inline-flex; /* Mudamos para inline-flex */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    margin-left: 1.4rem;
+  }
+  
+  
+  .expandable3 > a:after {
+    content: " ▼";
+    display: inline;
+    margin-left: 4.8rem;
+  }
+
+  .expandable4 > a:after {
+    content: " ▼";
+    display: inline;
+    margin-left: 22.4rem;
+  }
+
+  .expandable5 > a:after {
+    content: " ▼";
+    display: inline;
+    margin-left: 20.4rem;
+  }
+
+  
+  
+  
+  .produtos{
+    padding-left: 10px;
+    padding-bottom: 20px;
+  }
+  
+  .sub-menu-produtos h2 {
+    color: white;
+  }
+  
+  
+  .sidebar {
+    width: 0;
+    height: 100%;
+    position: fixed; /* Importante para o z-index funcionar */
+    z-index: 9999; /* Defina um valor menor para ficar em segundo plano */
+    top: 0;
+    left: 0;
+    background-color: #bd5200;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    color: white;
+  }
+  
+  .sidebar a{
+    color: white;
+    text-decoration: none;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding-left: 50px;
+  }
+  
+  .sidebar li {
+    padding: 10px;
+  }
+  
+  .content {
+    margin-left: 33.33%;
+    /* Rest of your content styles */
+  }
+  
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul li {
+    margin: 0 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+/* ----------------- Head ------------------------- */
+
+/* ----------------- Main ------------------------- */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variáveis CSS */
+:root {
+    --primary-color: #FF6D00;
+    --secondary-color: #30AFBF;
+    --text-dark: #333;
+    --text-light: #fff;
+    --bg-light: #f9f9f9;
+    --card-bg: #fff;
+    --border-radius: 10px;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative; /* Essencial para que o overlay e o conteúdo sejam posicionados dentro dela */
+    width: 100%;
+    margin-top: 4.6rem;
+    /* A altura da hero-section será definida indiretamente pela imagem de fundo e o preenchimento,
+       mas podemos deixar um min-height para garantir que sempre tenha um tamanho mínimo. */
+    min-height: 200px; /* Ajuste conforme a altura desejada da área laranja */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-light);
+    /* Remove background aqui, pois a imagem será no body ou em um elemento pai */
+    /* padding-top: 70px; // Pode ser necessário se houver um cabeçalho fixo */
+    z-index: 2; /* Garante que a hero-section fique acima da imagem de fundo da category-carousel-section */
+}
+
+/* O overlay laranja transparente agora deve ser o background da hero-section */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 109, 0, 0.7); /* Laranja transparente */
+    z-index: -1; /* Garante que o overlay fique atrás do conteúdo da hero-section */
+}
+
+
+.hero-content-wrapper {
+    position: relative;
+    z-index: 2; /* Garante que o conteúdo da hero-section esteja acima do overlay */
+    max-width: 1200px;
+    padding: 0 20px;
+    text-align: left; /* Alinha o texto dentro do wrapper à esquerda */
+}
+
+.hero-breadcrumb {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.hero-section h1 {
+    font-size: 2.8em;
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+.hero-section p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Category Carousel Section */
+.category-carousel-section {
+    /* Remova o background-image daqui, ele deve ir no body ou em um container pai para ser o "fundo geral" */
+    /* background: url('../img/main/section-hero/bg.png') no-repeat center center/cover; */
+    padding: 3rem 0; /* Mantenha um padding superior para afastar o conteúdo do topo da section */
+    /* Remove o transform e z-index daqui */
+    position: relative; /* Para que os elementos filhos possam ser posicionados relativamente a ele */
+    margin-top: -304px; /* Puxa a seção para cima, sobrepondo a hero. Ajuste este valor! */
+    z-index: 1; /* Garante que a section do carrossel fique abaixo da hero-section na área de sobreposição */
+    background: url('../img/main/section-hero/bg.png') no-repeat center center/cover; /* Substitua pelo caminho correto da imagem */
+  }
+
+/* O background da imagem de fundo que você quer que apareça */
+body {
+    background-attachment: fixed; /* Opcional: para fixar a imagem de fundo */
+}
+
+
+.category-carousel-container {
+    max-width: 1200px;
+    margin: 100px auto; /* Centraliza o container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 12rem 2rem 0rem 2rem; /* Padding horizontal */
+    position: relative; /* Para que as setas possam ser posicionadas */
+    z-index: 3; /* Garante que o carrossel e seus cards fiquem acima da section hero */
+    margin-bottom: 0rem;
+  }
+
+.category-carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.category-carousel-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease-in-out;
+    padding: 10px 0;
+}
+
+.category-card {
+    min-width: 300px;
+    flex-shrink: 0;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+.category-card-icon {
+    width: 100px;
+    height: 100px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    overflow: hidden;
+}
+
+.category-card-icon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.category-card h2 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.category-btn-noticias {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none; /* Adicione esta linha para remover a borda */
+}
+
+.category-btn-noticias:hover {
+    background-color: #e06000;
+}
+
+.category-carousel-arrow {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.category-carousel-arrow:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .hero-section h1 {
+        font-size: 2em;
+    }
+
+    .category-card {
+        min-width: 250px;
+        padding: 25px 15px;
+    }
+
+    .category-carousel-track {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 300px;
+    }
+
+    .hero-section h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-section p {
+        font-size: 0.9em;
+    }
+
+    .category-carousel-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .category-carousel-arrow {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2em;
+    }
+
+    .category-carousel-track-container {
+        width: 100%;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+    }
+
+    .category-carousel-track {
+        scroll-snap-align: start;
+        padding-bottom: 15px;
+        justify-content: flex-start;
+    }
+
+    .category-card {
+        min-width: 280px;
+    }
+}
+
+/* Base styles for desktop/larger screens */
+.categories {
+  /* Por padrão, o select fica oculto em telas maiores */
+  display: none;
+  padding: 1rem 0rem;
+}
+
+.category-button {
+  border: 4px solid #2AB0BF;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #2AB0BF;
+  background-color: transparent;
+  font-size: 1.05em;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; /* Adiciona transição para hover */
+}
+
+.category-button.selected {
+  background-color: #FF6D00;
+  color: #fff;
+  border: 4px solid transparent; /* Mantenha a borda transparente para o efeito de "preenchimento" */
+}
+
+.category-buttons {
+  display: flex;
+  justify-content: center; /* Centraliza os botões em telas maiores */
+  padding: 1% 5%; /* Ajusta o padding horizontal */
+  margin-top: 60px;
+  flex-wrap: wrap;
+  gap: 15px 12px; /* Espaçamento entre os botões */
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas grandes */
+  grid-gap: 40px;
+  margin: 2% 10%; /* Margem lateral */
+  max-width: 920px; /* Limita a largura máxima da grade */
+  margin-left: auto; /* Centraliza a grade */
+  margin-right: auto; /* Centraliza a grade */
+  padding: 0 15px; /* Adiciona um padding nas laterais para evitar que o conteúdo cole nas bordas */
+}
+
+.product {
+  max-width: 100%; /* Garante que o produto não exceda o espaço disponível na coluna */
+  padding: 0;
+  text-align: left; /* Alinha o texto à esquerda dentro do produto */
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
+  border-radius: 20px; /* Borda arredondada para o card */
+}
+
+.product:hover {
+  transform: translateY(-5px); /* Efeito de "levantar" ao passar o mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product a{
+  text-decoration: none; 
+}
+
+.product-img {
+  width: 100%; /* Ajusta a imagem para preencher a largura do container */
+  height: 240px;
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+  border-radius: 20px 20px 0 0; /* Bordas arredondadas apenas na parte superior */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.product:hover .product-img {
+  transform: scale(1.03); /* Zoom sutil na imagem ao passar o mouse sobre o card */
+}
+
+.text-product {
+  padding: 15px; /* Espaçamento interno para o texto */
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+/* No seu style.css, encontre: */
+.text-product a {
+  background-color: #FF6D00;
+  color: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+  /* ... outras propriedades ... */
+}
+
+.text-product .category-tag {
+  background-color: #FF6D00;
+  color: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+  display: inline-block;
+  margin-bottom: 5px;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.ler-mais span {
+  color: #2AB0BF;
+  text-decoration: none; /* Adicione esta linha para remover o sublinhado */
+}
+
+.ler-mais span:hover {
+  text-decoration: underline; /* Mantenha esta para o efeito de hover, se desejar */
+}
+
+.text-product h3 {
+    color: #FF6D00;
+    margin: 10px 0 0 0;
+    padding: 0;
+    font-size: 1em; /* Ajusta o tamanho da fonte */
+    line-height: 1.3; /* Espaçamento entre linhas */
+    min-height: 50px; /* Garante altura mínima para alinhamento */
+    transition: color 0.3s ease;
+    text-decoration: none; /* Adicione ou certifique-se que esta linha esteja presente e não sobrescrita */
+}
+
+.ler-mais {
+  text-align: left;
+  color: #2AB0BF;
+  padding: 0 15px 15px; /* Espaçamento inferior para o link */
+  font-weight: bold; /* Deixa o texto em negrito */
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.ler-mais a {
+  color: #2AB0BF; /* Garante que o link tenha a cor correta */
+  text-decoration: none; /* Remove sublinhado padrão */
+}
+
+.ler-mais a:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+
+/* ----------------- Media Queries para Responsividade ------------------------- */
+
+/* Para tablets (e.g., de 768px a 1024px) */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    grid-gap: 30px;
+    margin: 2% 5%; /* Ajusta margens */
+  }
+
+  .category-button {
+    font-size: 1.2em; /* Reduz o tamanho da fonte dos botões */
+    padding: 4px 8px;
+  }
+
+  .category-buttons {
+    padding: 1% 2%; /* Ajusta padding */
+    margin-top: 40px;
+    gap: 10px 15px;
+    justify-content: center; /* Centraliza os botões */
+  }
+
+  .product-img {
+    height: 220px; /* Reduz um pouco a altura da imagem */
+  }
+
+  .text-product h3 {
+    font-size: 1em; /* Reduz o tamanho da fonte do título */
+    min-height: 45px;
+  }
+}
+
+/* Para dispositivos móveis (e.g., até 767px) */
+@media (max-width: 767px) {
+  .categories {
+    display: block; /* Mostra o select em telas pequenas */
+    padding: 20px 15px; /* Ajusta padding */
+  }
+
+  .categories select {
+    display: block; /* Faz o select ser exibido */
+    width: 100%; /* Ocupa 100% da largura */
+    max-width: 300px; /* Limita a largura máxima do select */
+    margin: 0 auto; /* Centraliza o select */
+    padding: 10px;
+    border: 1px solid #2AB0BF;
+    border-radius: 5px;
+    font-size: 1.1em;
+  }
+
+  .category-buttons {
+    display: none; /* Oculta os botões em telas pequenas */
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr; /* 1 coluna apenas */
+    grid-gap: 20px;
+    margin: 20px 15px; /* Margem em pixels para consistência */
+  }
+
+  .product {
+    margin-bottom: 20px; /* Adiciona espaço entre os cards */
+    padding: 0;
+  }
+
+  .product-img {
+    height: 200px; /* Ajusta a altura da imagem para dispositivos menores */
+    border-radius: 10px 10px 0 0;
+  }
+
+  .text-product {
+    padding: 10px;
+  }
+
+  .text-product a {
+    font-size: 0.8em;
+    padding: 3px 8px;
+  }
+
+  .text-product h3 {
+    font-size: 0.95em;
+    min-height: 40px;
+  }
+
+  .ler-mais {
+    padding: 0 10px 10px;
+    font-size: 0.9em;
+  }
+}
+
+/* -------------------------------- Main ------------------------------- */
+
+/* -------------------------------- Footer ------------------------------- */
+
+/* Estilos para o botão "Voltar ao topo" */
+.back-to-top-button {
+    margin-top: 40px; /* Espaço acima do botão */
+    /* REMOVA A LINHA ABAIXO se quiser que ele apareça o tempo todo */
+    /* display: none; */ 
+}
+
+.back-to-top-button a {
+    display: flex; /* Para alinhar a imagem e o texto */
+    align-items: center;
+    text-decoration: none;
+    color: #FF6D00; /* Cor do texto do botão */
+    font-weight: bold;
+}
+
+.back-to-top-button img {
+    width: 30px; /* Tamanho da imagem da seta */
+    height: 30px;
+    margin-right: 10px; /* Espaço entre a seta e o texto */
+    background-color: #FF6D00; /* Cor de fundo para a seta */
+    border-radius: 5px; /* Bordas arredondadas para a seta */
+    padding: 5px; /* Espaçamento interno da seta */
+}
+
+.back-to-top-button a:hover {
+    opacity: 0.8; /* Efeito de hover */
+}
+
+/* O restante do seu CSS para responsividade, boxes, etc., permanece o mesmo: */
+
+/* Estilo para o footer geral */
+footer {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.linha-laranja-topo {
+    width: 100%;
+    height: 20px;
+    background-color: #FF6D00;
+}
+
+.boxes-container {
+    display: flex;
+    padding: 40px 180px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.box {
+    flex: 1;
+    background: transparent;
+    text-align: left;
+    padding: 4px;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.box h2, .box h3 {
+    color: #FF6D00;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.box p {
+    margin: 0;
+    padding-top: 5px;
+    color: #7D7D7D;
+}
+
+.social-icons {
+    display: flex;
+    border-radius: 10px;
+    justify-content: left;
+    padding: 10px 0;
+    margin-top: 10px;
+}
+
+.social-icon {
+    margin-right: 10px;
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.email-box {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 10px;
+}
+
+input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    width: 70%;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+}
+
+button.enviar-button {
+    background-color: #FF6D00;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button.enviar-button:hover {
+    background-color: #994300;
+}
+
+input[type="email"]:focus {
+    border: 2px solid #ffffff;
+    outline: none;
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 80px;
+    right: 23px;
+    z-index: 9999;
+}
+
+.whatsapp-button img {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.whatsapp-button img:hover {
+    background-color: #25d366;
+}
+
+.direitos-autorais {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #FF6D00;
+    color: #fff;
+    font-size: 14px;
+}
+
+.direitos-autorais p {
+    color: #fff;
+}
+
+/* ================== Media Queries para Responsividade ================== */
+
+@media (max-width: 1200px) {
+    .boxes-container {
+        padding: 30px 50px;
+    }
+}
+
+@media (max-width: 992px) {
+    .boxes-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+    }
+
+    .box {
+        text-align: center;
+        margin-bottom: 30px;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .social-icons, .email-box {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .boxes-container {
+        padding: 20px 15px;
+    }
+
+    .box {
+        margin-bottom: 25px;
+    }
+
+    .box h2, .box h3 {
+        font-size: 20px;
+    }
+
+    .box p {
+        font-size: 14px;
+    }
+
+    input[type="email"], button.enviar-button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .social-icon img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .whatsapp-button {
+        bottom: 20px;
+        right: 15px;
+    }
+
+    .whatsapp-button img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        margin-bottom: 20px;
+    }
+
+    input[type="email"] {
+        width: 60%;
+    }
+
+    button.enviar-button {
+        width: 40%;
+    }
+
+    .back-to-top-button{
+      margin: 10px 100px;
+    }
+    
+
+    .back-to-top-button a {
+        font-size: 14px;
+    }
+
+    .back-to-top-button img {
+        width: 25px;
+        height: 25px;
+    }
+}
+/* -------------------------------- Footer ------------------------------- */
